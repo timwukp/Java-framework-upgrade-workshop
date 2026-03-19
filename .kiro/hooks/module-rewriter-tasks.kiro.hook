@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Auto-invoke Module Rewriter for Tasks 4-8",
+  "description": "When a spec task starts executing, check if it's Task 4, 5, 6, 7, or 8 (module rewrites). If so, delegate the work to the workshop-module-rewriter sub-agent which is specialized for rewriting modules with Kiro IDE features.",
+  "version": "1",
+  "when": {
+    "type": "preTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Check the task that is about to execute. If it is Task 4 (Rewrite IDE setup instructions — Module 1 + PARTICIPANT-SETUP.md), Task 5 (Rewrite Module 2 — Java migration with Specs, Custom Agent, Skill, Power Builder), Task 6 (Rewrite Module 3 — Spring migration with Custom Agent, Skills, Power activation), Task 7 (Rewrite Module 4 — Testing and validation with Hooks, Skill, Context Keys), or Task 8 (Rewrite Module 5 — Platform validation with Powers and Chat), you MUST delegate this task to the \"workshop-module-rewriter\" sub-agent using invokeSubAgent. Pass the full task description including all subtasks as the prompt. The workshop-module-rewriter handles: Kiro feature introductions (Specs, Hooks, Skills, Custom Agents, Powers), feature summary table updates, and preserving all Java/Spring technical content. If the task is NOT Task 4-8, do nothing and proceed normally."
+  }
+}

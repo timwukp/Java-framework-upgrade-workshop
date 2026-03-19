@@ -1,14 +1,16 @@
 # Project Structure and Architecture
 
+> Kiro Steering File — Provides Kiro IDE with project structure and architecture context for navigating and understanding the codebase during migration.
+
 ## Directory Organization
 
 ### Root Level Structure
 ```
 Java-framework-upgrade-workshop/
-├── .amazonq/rules/memory-bank/          # Amazon Q Developer memory bank documentation
+├── .kiro/steering/                      # Kiro steering files for migration context
 ├── sample-app/                          # Core sample application for migration
 ├── Module-*.md                          # Workshop module guides (1-5)
-├── Amazon-Q-Developer-IDE-Workshop.md   # Main workshop documentation
+├── Kiro-IDE-Workshop.md                 # Main workshop documentation
 ├── INSTRUCTOR-QUICK-START.md            # Instructor setup guide
 ├── PARTICIPANT-SETUP.md                 # Participant prerequisites
 ├── Developer-Test-Walkthrough.md        # Testing procedures
@@ -91,11 +93,11 @@ Module 1 (Setup) → Module 2 (Java) → Module 3 (Spring) → Module 4 (Testing
 ```
 
 ### Module Scope
-- **Module 1**: Environment setup and initial assessment
-- **Module 2**: Java version upgrade and API modernization
-- **Module 3**: Spring framework and dependency updates
-- **Module 4**: Test framework migration and validation
-- **Module 5**: Platform-specific deployment validation
+- **Module 1**: Environment setup, steering files, Powers catalog, custom agent planning
+- **Module 2**: Java version upgrade, API modernization, Kiro Specs, Java Migration Agent, Java 8→21 Skill, Power Builder
+- **Module 3**: Spring framework and dependency updates, Spring Migration Agent, Jakarta Namespace Skill, Spring Security Skill
+- **Module 4**: Test framework migration, Kiro Hooks, JUnit 4→5 Skill, Context Keys
+- **Module 5**: Platform-specific deployment validation, Platform Deployment Power
 
 ## Platform Integration Points
 

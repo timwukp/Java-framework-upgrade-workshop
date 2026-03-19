@@ -44,58 +44,28 @@ brew install git
 git --version
 ```
 
-### IDE (Choose One)
-
-**Option A: VS Code**
-- Download: https://code.visualstudio.com/
-- Install VS Code
-
-**Option B: IntelliJ IDEA**
-- Download: https://www.jetbrains.com/idea/download/
-- Community Edition is sufficient
-
 ---
 
-## 2. Install Amazon Q Developer Extension
+## 2. Install Kiro IDE
 
-### For VS Code:
-1. Open VS Code
-2. Click Extensions icon (or Ctrl+Shift+X / Cmd+Shift+X)
-3. Search: "Amazon Q"
-4. Click "Install" on "Amazon Q" extension
-5. Restart VS Code
+Kiro IDE is a standalone AI-powered IDE — no extensions or plugins required.
 
-### For IntelliJ IDEA:
-1. Open IntelliJ IDEA
-2. Go to Settings/Preferences → Plugins
-3. Search: "Amazon Q"
-4. Click "Install"
-5. Restart IntelliJ
+1. Download Kiro IDE from [Kiro IDE Download URL]
+2. Run the installer for your operating system (macOS, Windows, or Linux)
+3. Launch Kiro IDE
+4. Click "Sign in" on the welcome screen
+5. Sign in with your Kiro account (create one if you don't have one yet)
+6. Complete authentication in your browser
+7. Return to Kiro IDE — verify the Kiro icon is active in the sidebar
 
----
-
-## 3. Configure AWS Credentials
-
-### Option A: AWS Builder ID (Recommended for Workshop)
-1. Open Amazon Q extension in your IDE
-2. Click "Sign in"
-3. Choose "AWS Builder ID"
-4. Complete authentication in browser
-5. Return to IDE - you should see Q icon active
-
-### Option B: IAM Identity Center
-1. Get credentials from your AWS administrator
-2. Follow IAM Identity Center setup
-3. Configure in Amazon Q extension
-
-### Verify Amazon Q is Working:
-1. Open Amazon Q Chat panel
+### Verify Kiro is Working:
+1. Open Kiro Chat panel (click the Kiro icon in the sidebar)
 2. Type: "Hello, can you help me with Java migration?"
 3. You should receive a response
 
 ---
 
-## 4. Get Workshop Materials
+## 3. Get Workshop Materials
 
 ### You will receive ONE of these:
 
@@ -115,7 +85,7 @@ cd java-spring-migration-workshop
 
 ---
 
-## 5. Verify Sample Application
+## 4. Verify Sample Application
 
 ```bash
 # Navigate to sample app
@@ -136,22 +106,17 @@ git log
 
 ---
 
-## 6. Open Sample App in IDE
+## 5. Open Sample App in Kiro IDE
 
-### VS Code:
-```bash
-cd sample-app
-code .
-```
-
-### IntelliJ IDEA:
-1. File → Open
-2. Select sample-app folder
-3. Wait for Maven import to complete
+1. Launch Kiro IDE
+2. File → Open Folder
+3. Select the `sample-app` folder
+4. Wait for Maven dependency resolution to complete
+5. Verify the project structure is visible in the Explorer panel
 
 ---
 
-## 7. Pre-Workshop Checklist
+## 6. Pre-Workshop Checklist
 
 Complete this checklist and bring to workshop:
 
@@ -159,17 +124,16 @@ Complete this checklist and bring to workshop:
 - [ ] Java 21 JDK installed and verified
 - [ ] Maven 3.8+ installed and verified
 - [ ] Git installed and verified
-- [ ] VS Code or IntelliJ IDEA installed
-- [ ] Amazon Q Developer extension installed
+- [ ] Kiro IDE installed and launched
 
-**Amazon Q Setup**:
-- [ ] Amazon Q extension authenticated
-- [ ] Q Chat responds to test query
-- [ ] Q icon visible in IDE
+**Kiro IDE Setup**:
+- [ ] Signed in with Kiro account
+- [ ] Kiro Chat responds to test query
+- [ ] Kiro icon visible and active in sidebar
 
 **Workshop Materials**:
 - [ ] Workshop folder downloaded/cloned
-- [ ] sample-app opens in IDE
+- [ ] sample-app opens in Kiro IDE
 - [ ] pom.xml shows Java 1.8 and Spring 5.2.3
 - [ ] Git log shows baseline commit
 
@@ -200,11 +164,11 @@ which mvn
 # If not found, add to PATH or reinstall
 ```
 
-### Amazon Q Not Responding
+### Kiro IDE Not Responding
 1. Check internet connection
-2. Sign out and sign in again
-3. Restart IDE
-4. Check AWS credentials are valid
+2. Sign out and sign in again (click Kiro icon → Sign out)
+3. Restart Kiro IDE
+4. Verify your Kiro account credentials are valid
 
 ### Sample App Won't Open
 1. Verify you're in correct directory

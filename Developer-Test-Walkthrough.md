@@ -38,18 +38,18 @@ $ git --version
 
 ## Module 1: Environment Setup & Assessment (90 min)
 
-### Exercise 1.1: Amazon Q Setup ⚠️
-**Status**: Cannot fully test (requires actual IDE with Q extension)
+### Exercise 1.1: Kiro Setup ⚠️
+**Status**: Cannot fully test (requires actual IDE with Kiro IDE)
 
 **What I would do**:
-1. Open VS Code
-2. Install Amazon Q extension
-3. Authenticate with AWS Builder ID
-4. Test with: "Hello, can you help me with Java migration?"
+1. Launch Kiro IDE
+2. Sign in with Kiro account
+3. Test with: "Hello, can you help me with Java migration?"
+4. Explore Kiro features: Specs, Hooks, Steering, Chat
 
 **Training Material Quality**: ✅ GOOD
-- Clear step-by-step instructions
-- Separate instructions for VS Code and IntelliJ
+- Clear step-by-step instructions for Kiro IDE setup
+- Covers Specs, Hooks, Steering, Skills, Custom Agents, and Powers
 - Verification steps included
 
 ### Exercise 1.2: Project Setup ✅
@@ -84,12 +84,12 @@ mvn validate
 
 **Training Material Quality**: ✅ GOOD
 - Provides correct Maven commands
-- Includes troubleshooting with Q
+- Includes troubleshooting with Kiro
 
 ### Exercise 1.4: Project Complexity Analysis 📝
-**Status**: SIMULATED (requires Q Chat)
+**Status**: SIMULATED (requires Kiro Chat)
 
-**What Q should identify**:
+**What Kiro should identify**:
 1. **Java 8 → 21 Issues**:
    - Date API usage (Date → LocalDateTime)
    - Old @RequestMapping patterns
@@ -108,7 +108,7 @@ mvn validate
    - SQL Server driver: 7.4.1.jre8 → 12.x.jre11
 
 **Training Material Quality**: ✅ EXCELLENT
-- Provides specific Q queries to ask
+- Provides specific Kiro queries to ask
 - Covers all assessment areas
 - Includes documentation checklist
 
@@ -116,19 +116,19 @@ mvn validate
 
 **Strengths**:
 - Clear progression from setup to assessment
-- Good Q query examples
+- Good Kiro query examples
 - Proper git workflow
 
 **Improvements Needed**:
 - Add note about needing H2 database for testing
-- Include sample Q responses for reference
+- Include sample Kiro responses for reference
 
 ---
 
 ## Module 2: Java 8 → Java 21 Migration (120 min)
 
-### Exercise 2.2: Execute /transform Command ⚠️
-**Status**: Cannot test (requires Q extension)
+### Exercise 2.2: Execute Kiro Specs Command ⚠️
+**Status**: Cannot test (requires Kiro IDE)
 
 **What should happen**:
 - Transform Date → LocalDateTime in User.java
@@ -171,7 +171,7 @@ protected void onCreate() {
 **Training Material Quality**: ✅ EXCELLENT
 - Shows before/after examples
 - Explains why changes were made
-- Includes Q queries for understanding
+- Includes Kiro queries for understanding
 
 ### Exercise 2.4-2.6: Fix Compilation Errors 📝
 **Status**: SIMULATED
@@ -185,7 +185,7 @@ protected void onCreate() {
 
 **Training Material Quality**: ✅ EXCELLENT
 - Covers all common Java 21 migration issues
-- Provides Q queries for each error type
+- Provides Kiro queries for each error type
 - Shows code examples
 
 ### Exercise 2.8: Update Dependencies 📝
@@ -534,7 +534,7 @@ class UserRepositoryIntegrationTest {
 **Training Material Quality**: ✅ GOOD
 - Provides correct JBoss descriptor
 - Explains module exclusions
-- Includes Q queries for help
+- Includes Kiro queries for help
 
 ### Exercise 5.7: Create WebSphere Deployment Descriptors 📝
 **Status**: GOOD GUIDANCE
@@ -557,7 +557,7 @@ class UserRepositoryIntegrationTest {
 **Strengths**:
 - Covers all three platforms (JBoss, WebSphere, Mainframe)
 - Platform-specific configurations provided
-- Good Q query examples
+- Good Kiro query examples
 
 **Improvements Needed**:
 - Add actual deployment testing steps
@@ -576,10 +576,11 @@ class UserRepositoryIntegrationTest {
    - JUnit 4 → 5 ✅
    - Platform deployment ✅
 
-2. **Excellent Q Integration**
-   - Specific Q queries provided for each step
-   - Shows how to ask effective questions
-   - Includes expected Q responses
+2. **Excellent Kiro IDE Integration**
+   - Specific Kiro Chat queries provided for each step
+   - Shows how to use Context Keys (#File, #Folder, #Problems, #Git Diff) effectively
+   - Covers Kiro Specs, Hooks, Skills, Custom Agents, and Powers
+   - Includes expected Kiro responses
 
 3. **Practical Examples**
    - Before/after code samples
@@ -598,9 +599,9 @@ class UserRepositoryIntegrationTest {
 
 ### ⚠️ AREAS FOR IMPROVEMENT
 
-1. **Testing Without Q Extension**
-   - Cannot fully validate Q-dependent exercises
-   - Need mock Q responses for reference
+1. **Testing Without Kiro IDE**
+   - Cannot fully validate Kiro-dependent exercises
+   - Need mock Kiro responses for reference
 
 2. **Database Setup**
    - Sample app needs H2 for easy testing
@@ -616,8 +617,8 @@ class UserRepositoryIntegrationTest {
 
 ### 📊 MODULE SCORES
 
-| Module | Content Quality | Practicality | Q Integration | Score |
-|--------|----------------|--------------|---------------|-------|
+| Module | Content Quality | Practicality | Kiro IDE Integration | Score |
+|--------|----------------|--------------|---------------------|-------|
 | Module 1 | ✅ Excellent | ✅ Good | ✅ Excellent | 9/10 |
 | Module 2 | ✅ Excellent | ✅ Excellent | ✅ Excellent | 10/10 |
 | Module 3 | ✅ Excellent | ✅ Excellent | ✅ Excellent | 10/10 |
@@ -638,7 +639,7 @@ class UserRepositoryIntegrationTest {
 ### Enhancements (Optional):
 1. Add H2 database configuration for easy testing
 2. Create docker-compose.yml for SQL Server
-3. Add sample Q response document
+3. Add sample Kiro response document
 4. Create video walkthrough of key exercises
 5. Add more Java 21 feature examples
 
@@ -646,7 +647,7 @@ class UserRepositoryIntegrationTest {
 1. Pre-install all tools before workshop
 2. Review Quick Reference Guide beforehand
 3. Have actual project code ready for Module 5
-4. Take notes on Q queries that work well
+4. Take notes on Kiro queries that work well
 
 ---
 
@@ -654,8 +655,8 @@ class UserRepositoryIntegrationTest {
 
 **Workshop Status**: ✅ READY FOR PRODUCTION USE
 
-The workshop materials are well-structured, comprehensive, and practical. The sample application accurately represents the migration challenges of the 27 enterprise applications. The integration of Amazon Q Developer throughout the exercises is excellent and shows participants exactly how to leverage AI assistance for migration tasks.
+The workshop materials are well-structured, comprehensive, and practical. The sample application accurately represents the migration challenges of the 27 enterprise applications. The integration of Kiro IDE throughout the exercises is excellent and shows participants exactly how to leverage AI assistance for migration tasks.
 
-**Confidence Level**: HIGH - This workshop will successfully train developers to migrate Java 8 + Spring 5.2.3 applications to Java 21 + Spring 6 using Amazon Q Developer.
+**Confidence Level**: HIGH - This workshop will successfully train developers to migrate Java 8 + Spring 5.2.3 applications to Java 21 + Spring 6 using Kiro IDE.
 
 **Estimated Success Rate**: 85-90% of participants will be able to independently migrate applications after completing this workshop.

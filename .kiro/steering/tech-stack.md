@@ -1,5 +1,7 @@
 # Technology Stack and Dependencies
 
+> Kiro Steering File — Provides Kiro IDE with technology stack context for guiding migration decisions.
+
 ## Programming Languages and Versions
 
 ### Current State (Pre-Migration)

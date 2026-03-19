@@ -76,7 +76,7 @@ cd java-spring-migration-workshop/sample-app
 "Good morning everyone!
 
 Today we're migrating a Java 8 + Spring 5.2.3 application to 
-Java 21 + Spring 6 using Amazon Q Developer.
+Java 21 + Spring 6 using Kiro IDE.
 
 First, let's make sure everyone has the materials:
 
@@ -84,8 +84,8 @@ First, let's make sure everyone has the materials:
 2. Can you open 'sample-app' directory?
 3. Open pom.xml - do you see Java 1.8 and Spring 5.2.3?
 
-Great! Let's verify Amazon Q is working:
-- Open Amazon Q in your IDE
+Great! Let's verify Kiro is working:
+- Open Kiro IDE
 - Type: 'Hello, can you help me with Java migration?'
 - Did you get a response?
 
@@ -103,7 +103,7 @@ and begin..."
 **Participants Do**:
 - Follow Module 1 step-by-step
 - Create git branch
-- Analyze project with Q
+- Analyze project with Kiro
 
 ### 10:45 AM - Module 2
 **You Say**: "Open Module-2-Java-Migration.md. We'll now upgrade to Java 21..."
@@ -135,7 +135,7 @@ and begin..."
 
 ---
 
-## Key Amazon Q Queries to Demonstrate
+## Key Kiro Queries to Demonstrate
 
 ```
 "Analyze this Java 8 + Spring 5.2.3 application for migration complexity"
@@ -148,6 +148,40 @@ and begin..."
 
 "Migrate this JUnit 4 test to JUnit 5"
 ```
+
+---
+
+## Key Kiro Features to Demonstrate
+
+### Kiro Specs (Module 2)
+Show participants how to create a Specs workflow (requirements → design → tasks) for the Java migration. Walk through the structured planning approach.
+
+### Kiro Hooks (Module 4)
+Demonstrate automated code review on file save. Show how Hooks catch issues continuously as participants make changes.
+
+### Kiro Skills (Modules 2-4)
+Demonstrate creating and triggering Skills for repetitive migration patterns:
+- **Java 8→21 Migration Skill** (Module 2): Automates Date API modernization and deprecated API removal
+- **Jakarta Namespace Migration Skill** (Module 3): Automates javax.* → jakarta.* package rename
+- **Spring Security Upgrade Skill** (Module 3): Automates WebSecurityConfigurerAdapter → SecurityFilterChain
+- **JUnit 4→5 Migration Skill** (Module 4): Automates test annotation and assertion updates
+
+### Kiro Custom Agents (Modules 2-3)
+Show how to create specialized agents for migration phases:
+- **Java Migration Agent** (Module 2): Configured with Java 8→21 expertise
+- **Spring Migration Agent** (Module 3): Configured with Spring 5→6 and Jakarta namespace expertise
+
+### Kiro Powers (Modules 2, 5)
+Demonstrate building and using Powers to package migration knowledge:
+- **Java Framework Migration Power** (Module 2): Built with Power Builder, packages migration docs and steering files
+- **Platform Deployment Power** (Module 5): Bundles JBoss EAP/WebSphere/Mainframe deployment knowledge
+
+### Kiro Chat with Context Keys
+Show participants how to use Context Keys for targeted assistance:
+- `#File` — reference specific files for migration guidance
+- `#Folder` — reference packages for bulk operations
+- `#Problems` — share compilation errors for troubleshooting
+- `#Git Diff` — share changes for on-demand review
 
 ---
 
@@ -193,7 +227,7 @@ By end of day, their sample-app will have:
 2. **Module-1-Environment-Setup.md**
 3. **Quick-Reference-Guide.md**
 4. **sample-app/** in your IDE
-5. **Amazon Q** extension active
+5. **Kiro IDE** active and signed in
 
 ---
 
@@ -204,7 +238,7 @@ By end of day, their sample-app will have:
 - [ ] Have materials on shared screen
 - [ ] Can email individually
 
-**If Amazon Q Not Working**:
+**If Kiro Not Working**:
 - [ ] Check internet connection
 - [ ] Have participants re-authenticate
 - [ ] Continue with manual migration (materials still work)
@@ -219,7 +253,7 @@ By end of day, their sample-app will have:
 ## Success Metrics
 
 Participants should be able to:
-- [ ] Use Amazon Q Developer effectively
+- [ ] Use Kiro IDE effectively including Specs, Hooks, Steering, Skills, Custom Agents, and Powers
 - [ ] Migrate Java 8 → 21
 - [ ] Migrate Spring 5 → 6
 - [ ] Update test frameworks

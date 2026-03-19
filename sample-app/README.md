@@ -101,27 +101,42 @@ sample-app/
 ## What Customers Will Do
 
 ### Module 1: Setup
-- Open this application
-- Analyze with Amazon Q
-- Create migration plan
+- Open this application in Kiro IDE
+- Analyze with Kiro Chat
+- Set up Kiro Steering files for migration context
+- Browse and install relevant Powers from the Kiro Powers catalog
+- Create migration plan using Kiro Specs
 
 ### Module 2: Java 8 → 21
+- Create Kiro Specs workflow for Java migration
+- Use Java Migration Custom Agent for guided transformation
+- Create Java 8→21 Migration Skill for repetitive patterns
+- Build Java Framework Migration Power with Power Builder
 - Update pom.xml to Java 21
 - Migrate `Date` → `LocalDateTime`
 - Update dependencies
 
 ### Module 3: Spring 5 → 6
+- Use Spring Migration Custom Agent for framework migration
+- Create Jakarta Namespace Migration Skill for javax.* → jakarta.* conversion
+- Create Spring Security Upgrade Skill for SecurityFilterChain pattern
+- Activate Java Framework Migration Power for Spring migration guidance
 - Update Spring to 6.1.0
 - Migrate `javax.*` → `jakarta.*`
 - Rewrite `SecurityConfig` (remove WebSecurityConfigurerAdapter)
 - Modernize `UserController` annotations
 
 ### Module 4: Testing
+- Configure Kiro Hooks for automated code review on file save
+- Create JUnit 4→5 Migration Skill for test modernization
+- Use Kiro Chat with #Problems and #Git Diff Context Keys
 - Migrate JUnit 4 → 5
 - Update test annotations
 - Fix assertions
 
 ### Module 5: Platform
+- Build Platform Deployment Power for deployment knowledge
+- Use Kiro Chat for platform-specific guidance
 - Create JBoss descriptors
 - Create WebSphere descriptors
 

@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Estimate Kiro Credit Usage",
+  "description": "Reads the active Spec task list, counts all uncompleted tasks (lines starting with `- [ ]`), estimates the complexity of each task, and provides a projected Kiro credit consumption estimate. Triggered manually when you want a cost forecast before continuing work.",
+  "version": "1",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Read the spec tasks file at `.kiro/specs/kiro-ide-workshop-transformation/tasks.md`. Identify all uncompleted tasks (lines with `- [ ]`). For each uncompleted task, estimate its complexity as:\n\n- Simple (single file rename, link update, text replacement in one file): ~1 credit\n- Medium (multi-file text replacements, rewriting a section, creating a new file): ~2-3 credits\n- Complex (full module rewrite, introducing new feature content across files, multi-step validation): ~4-6 credits\n- Checkpoint/Validation (verification sweeps, cross-file checks): ~1-2 credits\n\nThen provide:\n1. A count of remaining uncompleted tasks (top-level and sub-tasks)\n2. A breakdown by complexity category\n3. A total estimated credit range (min - max)\n4. A brief note on which tasks are the most credit-intensive\n\nFormat the output as a clear, readable summary."
+  }
+}

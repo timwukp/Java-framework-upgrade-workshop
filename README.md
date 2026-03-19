@@ -1,15 +1,15 @@
-# Java Framework Migration Workshop
+# Java Framework Migration Workshop — AWS Kiro IDE
 
-> **Comprehensive hands-on workshop for migrating Java 8 + Spring 5.2.3 applications to Java 21 + Spring 6 using Amazon Q Developer IDE Extension**
+> **Comprehensive hands-on workshop for migrating Java 8 + Spring 5.2.3 applications to Java 21 + Spring 6 using AWS Kiro IDE**
 
 [![Java](https://img.shields.io/badge/Java-8%20→%2021-orange)](https://openjdk.org/projects/jdk/21/)
 [![Spring](https://img.shields.io/badge/Spring-5.2.3%20→%206.1.0-green)](https://spring.io/projects/spring-framework)
 [![Workshop](https://img.shields.io/badge/Duration-8%20hours-blue)](./Workshop-Agenda.md)
-[![Amazon Q](https://img.shields.io/badge/Amazon%20Q-Developer%20IDE-purple)](https://aws.amazon.com/q/developer/)
+[![Kiro IDE](https://img.shields.io/badge/Kiro-IDE-purple)](https://kiro.dev/)
 
 ## 🎯 Workshop Overview
 
-This repository contains a **complete enterprise-grade workshop** designed to guide development teams through Java framework modernization using Amazon Q Developer IDE Extension. The workshop targets **27 enterprise applications** across BDP (25 apps), BPT (2 apps), and BCN platforms, providing hands-on experience with real-world migration scenarios.
+This repository contains a **complete enterprise-grade workshop** designed to guide development teams through Java framework modernization using Kiro IDE. The workshop targets **27 enterprise applications** across BDP (25 apps), BPT (2 apps), and BCN platforms, providing hands-on experience with real-world migration scenarios.
 
 ### 🚀 What You'll Learn
 
@@ -17,11 +17,12 @@ This repository contains a **complete enterprise-grade workshop** designed to gu
 - **Spring 5.2.3 → Spring 6 Migration**: Framework modernization, Jakarta EE namespace migration, and security updates
 - **Testing Framework Updates**: JUnit 4 → JUnit 5 migration with modern testing practices
 - **Platform Deployment**: JBoss EAP, WebSphere, and mainframe compatibility
-- **Amazon Q Developer Mastery**: AI-assisted code transformation and migration guidance
+- **Kiro IDE Mastery**: AI-assisted migration using Specs, Hooks, Steering, Skills, Custom Agents, Powers, Chat, and Code Suggestions
 
 ## 📋 Table of Contents
 
 - [Quick Start](#-quick-start)
+- [Repository Structure](#-repository-structure)
 - [Workshop Structure](#-workshop-structure)
 - [Sample Application](#-sample-application)
 - [Technology Stack](#-technology-stack)
@@ -31,13 +32,39 @@ This repository contains a **complete enterprise-grade workshop** designed to gu
 - [Getting Help](#-getting-help)
 - [Contributing](#-contributing)
 
+## 🗂️ Repository Structure
+
+```
+Java-framework-upgrade-workshop/
+├── .kiro/                               # Kiro IDE configuration (steering, agents, hooks, specs)
+│   ├── steering/                        # Steering files for migration context
+│   ├── agents/                          # Custom agents for workshop tasks
+│   ├── hooks/                           # Agent hooks for automation
+│   └── specs/                           # Kiro Specs for structured planning
+├── sample-app/                          # Sample Java application for migration
+├── Module-1-Environment-Setup.md        # Module 1: Setup & Assessment
+├── Module-2-Java-Migration.md           # Module 2: Java 8 → 21
+├── Module-3-Spring-Migration.md         # Module 3: Spring 5 → 6
+├── Module-4-Testing-Validation.md       # Module 4: Testing & Validation
+├── Module-5-Platform-Validation.md      # Module 5: Platform Validation
+├── Kiro-IDE-Workshop.md                 # Main workshop guide
+├── Quick-Reference-Guide.md             # Kiro IDE features reference
+├── Workshop-Agenda.md                   # Schedule and timeline
+├── INSTRUCTOR-QUICK-START.md            # Instructor setup guide
+├── PARTICIPANT-SETUP.md                 # Participant prerequisites
+├── Developer-Test-Walkthrough.md        # Testing procedures
+├── TRAINING-KICKSTART.md                # Training quick start
+├── LICENSE                              # MIT License
+└── README.md                            # This file
+```
+
 ## 🚀 Quick Start
 
 ### For Workshop Participants
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/timwukp/Java-framework-upgrade-workshop.git
    cd Java-framework-upgrade-workshop
    ```
 
@@ -55,12 +82,14 @@ This repository contains a **complete enterprise-grade workshop** designed to gu
    mvn test
    ```
 
-4. **Install Amazon Q Developer IDE Extension**:
-   - VS Code: Install from marketplace
-   - IntelliJ IDEA: Install from plugin repository
-   - Configure AWS credentials (Builder ID or IAM Identity Center)
+4. **Install Kiro IDE**:
+   - Download Kiro IDE from [kiro.dev](https://kiro.dev/)
+   - Install and launch Kiro IDE
+   - Sign in with your Kiro account
 
-5. **Start with Module 1**: [Environment Setup](./Module-1-Environment-Setup.md)
+5. **Open the workshop guide**: [Kiro IDE Workshop](./Kiro-IDE-Workshop.md)
+
+6. **Start with Module 1**: [Environment Setup](./Module-1-Environment-Setup.md)
 
 ### For Instructors
 
@@ -72,16 +101,16 @@ See the [Instructor Quick Start Guide](./INSTRUCTOR-QUICK-START.md) for setup in
 
 | Module | Duration | Focus Area | Key Activities |
 |--------|----------|------------|----------------|
-| **[Module 1](./Module-1-Environment-Setup.md)** | 90 min | Environment Setup & Assessment | Amazon Q setup, project analysis, migration planning |
-| **[Module 2](./Module-2-Java-Migration.md)** | 120 min | Java 8 → Java 21 Migration | Code transformation, API updates, dependency management |
-| **[Module 3](./Module-3-Spring-Migration.md)** | 120 min | Spring 5 → Spring 6 Migration | Framework updates, Jakarta namespace, security configuration |
-| **[Module 4](./Module-4-Testing-Validation.md)** | 90 min | Testing & Validation | JUnit migration, test framework updates, validation |
+| **[Module 1](./Module-1-Environment-Setup.md)** | 90 min | Environment Setup & Assessment | Kiro IDE setup, Steering files, Powers catalog, migration planning |
+| **[Module 2](./Module-2-Java-Migration.md)** | 120 min | Java 8 → Java 21 Migration | Kiro Specs, Custom Agent, Skill, Power Builder |
+| **[Module 3](./Module-3-Spring-Migration.md)** | 120 min | Spring 5 → Spring 6 Migration | Custom Agent, Skills (Jakarta, Security), Power activation |
+| **[Module 4](./Module-4-Testing-Validation.md)** | 90 min | Testing & Validation | Kiro Hooks, JUnit 4→5 Skill, Context Keys |
 
 ### Optional Extended Session (90 minutes)
 
 | Module | Duration | Focus Area | Key Activities |
 |--------|----------|------------|----------------|
-| **[Module 5](./Module-5-Platform-Validation.md)** | 90 min | Platform-Specific Validation | JBoss EAP, WebSphere, mainframe deployment |
+| **[Module 5](./Module-5-Platform-Validation.md)** | 90 min | Platform-Specific Validation | Platform Deployment Power, JBoss EAP, WebSphere, mainframe |
 
 ## 📱 Sample Application
 
@@ -150,13 +179,11 @@ The workshop includes a **complete user management service** that demonstrates r
 - **Java 21 JDK** (OpenJDK or Oracle)
 - **Maven 3.8+** or Gradle 7+
 - **Git 2.x+**
-- **IDE**: VS Code or IntelliJ IDEA
-- **Amazon Q Developer IDE Extension**
+- **Kiro IDE** (standalone AI-powered IDE — download from [kiro.dev](https://kiro.dev/))
 
-### AWS Setup
-- AWS account with appropriate permissions
-- AWS credentials configured (Builder ID or IAM Identity Center)
-- Amazon Q Developer subscription (if required)
+### Kiro IDE Setup
+- Kiro account (sign up at [kiro.dev](https://kiro.dev/))
+- Kiro IDE installed and signed in
 
 ### Knowledge Prerequisites
 - Java development experience
@@ -186,36 +213,36 @@ mvn clean compile test
 ### Core Modules
 
 1. **[Module 1: Environment Setup & Assessment](./Module-1-Environment-Setup.md)**
-   - Amazon Q Developer setup and configuration
+   - Kiro IDE setup, Steering files, and Powers catalog
    - Project analysis and migration planning
    - Risk assessment and baseline establishment
 
 2. **[Module 2: Java 8 → Java 21 Migration](./Module-2-Java-Migration.md)**
-   - Code transformation using Amazon Q `/transform` command
-   - Modern Java API adoption
-   - Dependency updates and compatibility
+   - Code transformation using Kiro Specs workflow
+   - Java Migration Custom Agent and Java 8→21 Migration Skill
+   - Power Builder: Java Framework Migration Power
 
 3. **[Module 3: Spring 5 → Spring 6 Migration](./Module-3-Spring-Migration.md)**
-   - Framework version updates
-   - Jakarta EE namespace migration
-   - Security configuration modernization
+   - Spring Migration Custom Agent with Jakarta Namespace Migration Skill
+   - Spring Security Upgrade Skill
+   - Kiro Chat with Context Keys for framework updates
 
 4. **[Module 4: Testing & Validation](./Module-4-Testing-Validation.md)**
-   - JUnit 4 → JUnit 5 migration
-   - Test framework updates
-   - Comprehensive validation
+   - Kiro Hooks for automated code review
+   - JUnit 4→5 Migration Skill
+   - Kiro Chat with #Problems and #Git Diff Context Keys
 
 ### Optional Module
 
 5. **[Module 5: Platform-Specific Validation](./Module-5-Platform-Validation.md)**
-   - JBoss EAP deployment configuration
-   - WebSphere Liberty setup
-   - Mainframe optimization
+   - Platform Deployment Power for JBoss EAP, WebSphere, and mainframe
+   - Kiro Chat for platform-specific guidance
 
 ### Additional Resources
 
+- **[Kiro IDE Workshop Guide](./Kiro-IDE-Workshop.md)**: Main workshop document with full Kiro IDE feature walkthrough
 - **[Workshop Agenda](./Workshop-Agenda.md)**: Detailed schedule and timeline
-- **[Quick Reference Guide](./Quick-Reference-Guide.md)**: Command reference and troubleshooting
+- **[Quick Reference Guide](./Quick-Reference-Guide.md)**: Kiro IDE features reference and troubleshooting
 - **[Participant Setup](./PARTICIPANT-SETUP.md)**: Pre-workshop preparation
 - **[Developer Test Walkthrough](./Developer-Test-Walkthrough.md)**: Testing procedures
 
@@ -245,11 +272,11 @@ mvn clean compile test
 
 ### During the Workshop
 
-1. **Amazon Q Developer**: Primary tool for guidance and troubleshooting
+1. **Kiro IDE**: Primary tool for guidance and troubleshooting — use Kiro Chat with Context Keys (#File, #Problems, #Git Diff) for targeted help
    ```
-   "How do I fix this Java 21 migration error: [error message]"
-   "Convert this Spring 5 security configuration to Spring 6"
-   "Migrate this JUnit 4 test to JUnit 5"
+   Ask Kiro: "How do I fix this Java 21 migration error: [error message]" #Problems
+   Ask Kiro: "Convert this Spring 5 security configuration to Spring 6" #File
+   Ask Kiro: "Migrate this JUnit 4 test to JUnit 5" #File
    ```
 
 2. **Instructor Support**: Hands-on assistance and guidance
@@ -258,7 +285,7 @@ mvn clean compile test
 
 ### Post-Workshop Support
 
-- **AWS Documentation**: [Amazon Q Developer](https://docs.aws.amazon.com/amazonq/)
+- **Kiro IDE Documentation**: [Kiro IDE](https://kiro.dev/docs)
 - **Spring Migration Guide**: [Spring Framework 6.0](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x)
 - **Java Migration Guide**: [Oracle Java 21](https://docs.oracle.com/en/java/javase/21/migrate/)
 
@@ -266,7 +293,7 @@ mvn clean compile test
 
 See the [Quick Reference Guide](./Quick-Reference-Guide.md) for:
 - Common migration errors and fixes
-- Amazon Q Developer best practices
+- Kiro IDE best practices
 - Platform-specific troubleshooting
 - Performance optimization tips
 
@@ -298,14 +325,14 @@ We welcome contributions to improve the workshop experience:
 
 ## 📄 License
 
-This workshop is provided for educational purposes. Please review your organization's policies regarding the use of AI-assisted development tools and cloud services.
+This project is licensed under the MIT License — see the [LICENSE](./LICENSE) file for details.
 
-## 📞 Support Contacts
+## 📞 Support
 
-- **Workshop Instructor**: [Contact information]
-- **AWS Support**: [Support channel]
-- **Amazon Q Developer**: [Documentation and support]
-- **Internal Team Lead**: [Contact information]
+- **Kiro IDE**: [Documentation and Support](https://kiro.dev/docs)
+- **Spring Migration Guide**: [Upgrading to Spring 6.x](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x)
+- **Java Migration Guide**: [Oracle Java 21 Migration](https://docs.oracle.com/en/java/javase/21/migrate/)
+- **Issues**: [GitHub Issues](https://github.com/timwukp/Java-framework-upgrade-workshop/issues)
 
 ---
 
@@ -314,7 +341,7 @@ This workshop is provided for educational purposes. Please review your organizat
 By completing this workshop, participants will:
 
 - ✅ Successfully migrate a complete Java 8 + Spring 5 application to Java 21 + Spring 6
-- ✅ Master Amazon Q Developer IDE extension for AI-assisted development
+- ✅ Master Kiro IDE for AI-assisted development including Specs, Hooks, Steering, Skills, Custom Agents, and Powers
 - ✅ Understand modern Java and Spring framework patterns
 - ✅ Be equipped to migrate production enterprise applications
 - ✅ Have platform-specific deployment knowledge for JBoss EAP, WebSphere, and mainframe
@@ -323,4 +350,4 @@ By completing this workshop, participants will:
 
 ---
 
-*Workshop Version: 1.0 | Last Updated: [Current Date] | Next Review: [Review Date]*
+*Workshop Version: 2.0 (Kiro IDE) | Last Updated: March 2026*

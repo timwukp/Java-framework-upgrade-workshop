@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Auto-Disable MCP Tools After Task",
+  "description": "After the agent completes a task that used MCP server tools, disables the MCP_DOCKER server to keep the environment clean and reduce unnecessary tool loading.",
+  "version": "1",
+  "when": {
+    "type": "agentStop"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "The agent task has completed. Check if MCP_DOCKER tools were used during this session (any tool prefixed with mcp_MCP_DOCKER_). If MCP_DOCKER tools were used, disable the MCP_DOCKER server to keep the environment clean. To disable it: Read ~/.kiro/settings/mcp.json, set disabled to true for the MCP_DOCKER server entry, and write it back. Make sure to preserve all other settings in the file including powers, autoApprove, and other server configs. If no MCP_DOCKER tools were used, do nothing."
+  }
+}

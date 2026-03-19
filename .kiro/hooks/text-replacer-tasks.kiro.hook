@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Auto-invoke Text Replacer for Tasks 1-3",
+  "description": "When a spec task starts executing, check if it's Task 1, 2, or 3 (file rename, global text replacements, or verification checkpoint). If so, delegate the work to the workshop-text-replacer sub-agent which is specialized for ordered text replacements across all markdown files.",
+  "version": "1",
+  "when": {
+    "type": "preTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Check the task that is about to execute. If it is Task 1 (Rename workshop file and update all cross-references), Task 2 (Apply global text replacements across all markdown files), or Task 3 (Checkpoint — Verify global replacements), you MUST delegate this task to the \"workshop-text-replacer\" sub-agent using invokeSubAgent. Pass the full task description as the prompt so the sub-agent knows exactly what to do. The workshop-text-replacer agent handles: file renaming, ordered text replacements (Priority 1-6, longest-match-first), code block preservation, cross-reference updates, and verification. If the task is NOT Task 1, 2, or 3, do nothing and proceed normally."
+  }
+}

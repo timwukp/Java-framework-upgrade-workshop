@@ -111,7 +111,7 @@ cd java-spring-migration-workshop/sample-app
 **Your Script**:
 ```
 "Good morning! Today we'll migrate a Java 8 + Spring 5.2.3 application 
-to Java 21 + Spring 6 using Amazon Q Developer.
+to Java 21 + Spring 6 using Kiro IDE.
 
 First, let's verify everyone has the materials:
 1. Open the workshop folder
@@ -127,9 +127,10 @@ Everyone ready? Let's begin with Module 1..."
 ```
 "Open Module-1-Environment-Setup.md
 
-First exercise: Install Amazon Q Developer extension
-- VS Code users: Extensions → Search 'Amazon Q'
-- IntelliJ users: Settings → Plugins → Search 'Amazon Q'
+First exercise: Launch Kiro IDE and sign in
+- Open Kiro IDE
+- Sign in with your Kiro account
+- Verify Kiro Chat responds
 
 Let's do this together..."
 ```
@@ -161,9 +162,7 @@ Let's do this together..."
 - [ ] Java 21 JDK installed
 - [ ] Maven 3.8+ installed
 - [ ] Git installed
-- [ ] VS Code or IntelliJ IDEA
-- [ ] Amazon Q Developer extension installed
-- [ ] AWS credentials configured
+- [ ] Kiro IDE installed and signed in with Kiro account
 
 ---
 
@@ -171,9 +170,9 @@ Let's do this together..."
 
 ### Module 1 (90 min): Environment Setup
 - Participants open sample-app
-- Install Amazon Q extension
+- Launch Kiro IDE and sign in
 - Create git branch
-- Analyze project with Q
+- Analyze project with Kiro
 
 ### Module 2 (120 min): Java Migration
 - Update pom.xml to Java 21
@@ -243,7 +242,7 @@ mvn clean compile
 - **Module 4**: JUnit 4→5, test patterns
 - **Module 5**: Platform descriptors
 
-### Amazon Q Queries to Demonstrate:
+### Kiro Chat Queries to Demonstrate:
 ```
 "Analyze this Java 8 + Spring 5.2.3 application for migration complexity"
 "Update this pom.xml to Java 21"
@@ -259,7 +258,7 @@ mvn clean compile
 ### Collect Feedback:
 - What worked well?
 - What was confusing?
-- Amazon Q helpfulness rating
+- Kiro IDE helpfulness rating (Specs, Hooks, Skills, Custom Agents, Powers)
 - Would they recommend to colleagues?
 
 ### Share Resources:
@@ -283,7 +282,7 @@ mvn clean compile
 - [ ] Test screen sharing
 - [ ] Open all module files
 - [ ] Have sample-app open in IDE
-- [ ] Amazon Q extension working
+- [ ] Kiro IDE active and signed in
 - [ ] Test internet connection
 - [ ] Prepare backup materials (USB drive)
 
@@ -299,7 +298,7 @@ mvn clean compile
 
 By end of training, participants should:
 - [ ] Have migrated sample-app to Java 21 + Spring 6
-- [ ] Be comfortable using Amazon Q Developer
+- [ ] Be comfortable using Kiro IDE (Specs, Hooks, Steering, Skills, Custom Agents, Powers, Chat)
 - [ ] Understand migration patterns
 - [ ] Be ready to migrate their own applications
 

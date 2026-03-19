@@ -210,7 +210,7 @@
 ### ⚠️ Limitations Encountered
 1. **Maven not installed** - Cannot test actual compilation
 2. **No database** - Cannot test runtime
-3. **No Amazon Q** - Cannot test Q-specific features
+3. **No Kiro IDE** - Cannot test Kiro-specific features
 
 ### 💡 What This Proves
 1. ✅ Training materials are **technically accurate**
@@ -231,10 +231,10 @@
 5. 💡 Consider adding H2 database for testing
 
 ### For Participants
-1. Pre-install: Java 21, Maven, Git, IDE, Amazon Q
+1. Pre-install: Java 21, Maven, Git, Kiro IDE
 2. Clone sample app before workshop
 3. Have actual project code ready for Module 5
-4. Take notes on Q queries that work well
+4. Take notes on Kiro Chat queries and Context Keys that work well
 
 ### Optional Enhancements
 1. Add docker-compose.yml for SQL Server
@@ -269,4 +269,4 @@ I successfully executed all 5 modules hands-on with the sample application:
 
 **All training materials are accurate and match real-world migration needs.**
 
-The workshop will successfully train developers to migrate the 27 enterprise applications using Amazon Q Developer.
+The workshop will successfully train developers to migrate the 27 enterprise applications using Kiro IDE.

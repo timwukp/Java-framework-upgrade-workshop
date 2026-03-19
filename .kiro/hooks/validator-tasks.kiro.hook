@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Auto-invoke Validator for Tasks 9, 14-16",
+  "description": "When a spec task starts executing, check if it's Task 9, 14, 15, or 16 (checkpoint and validation tasks). If so, delegate the work to the workshop-validator sub-agent which performs read-only validation and produces a structured pass/fail report.",
+  "version": "1",
+  "when": {
+    "type": "preTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Check the task that is about to execute. If it is Task 9 (Checkpoint — Verify module rewrites), Task 14 (Checkpoint — Verify full transformation), Task 15 (Validate content preservation and link integrity), or Task 16 (Final checkpoint — Complete transformation validation), you MUST delegate this task to the \"workshop-validator\" sub-agent using invokeSubAgent. Pass the full task description including all verification criteria as the prompt. The workshop-validator performs READ-ONLY validation: checking for remaining Q Developer terminology, verifying file renames, confirming steering files exist, validating sample-app preservation, checking feature summary tables, cross-referencing features across modules and Quick Reference Guide, and verifying external URL replacements. It produces a structured pass/fail report. If the task is NOT Task 9, 14, 15, or 16, do nothing and proceed normally."
+  }
+}

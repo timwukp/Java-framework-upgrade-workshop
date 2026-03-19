@@ -1,7 +1,10 @@
-# Java Framework Migration Workshop
+# Project Context
+
+> Kiro Steering File — Provides Kiro IDE with project-level context for the Java Framework Migration Workshop.
 
 ## Project Purpose
-This is a comprehensive hands-on workshop designed to guide enterprise teams through Java framework modernization using Amazon Q Developer IDE Extension. The workshop focuses on migrating applications from Java 8 + Spring 5.2.3 to Java 21 + Spring 6, targeting 27 enterprise applications across BDP (25 apps), BPT (2 apps), and BCN platforms.
+
+This is a comprehensive hands-on workshop designed to guide enterprise teams through Java framework modernization using Kiro IDE. The workshop focuses on migrating applications from Java 8 + Spring 5.2.3 to Java 21 + Spring 6, targeting 27 enterprise applications across BDP (25 apps), BPT (2 apps), and BCN platforms.
 
 ## Key Features and Capabilities
 
@@ -17,11 +20,14 @@ This is a comprehensive hands-on workshop designed to guide enterprise teams thr
 - **Complete user management service** with authentication, database integration, and comprehensive test suite
 - **Real-world patterns** including javax to jakarta namespace migration, security configuration updates, and JUnit 4 to 5 migration
 
-### Amazon Q Developer Integration
-- **Code transformation** using /transform command for automated Java version upgrades
-- **Interactive chat assistance** for migration guidance and troubleshooting
-- **Inline code suggestions** for fixing compilation errors and implementing best practices
-- **Code review capabilities** using /review command for validation and security checks
+### Kiro IDE Integration
+- **Kiro Specs** for structured migration planning (requirements → design → tasks)
+- **Kiro Hooks** for automated code review on file save and on-demand review via Kiro Chat with #Git Diff
+- **Kiro Chat with Context Keys** (#File, #Folder, #Problems, #Terminal, #Git Diff) for interactive migration guidance and troubleshooting
+- **Kiro Code Suggestions** for inline code completions during development
+- **Kiro Skills** for automating repetitive migration patterns (Java 8→21, Jakarta namespace, Spring Security, JUnit 4→5)
+- **Kiro Custom Agents** for specialized migration tasks (Java Migration Agent, Spring Migration Agent)
+- **Kiro Powers** for packaging and sharing migration knowledge (Java Framework Migration Power, Platform Deployment Power)
 
 ## Target Users and Use Cases
 
@@ -40,8 +46,8 @@ This is a comprehensive hands-on workshop designed to guide enterprise teams thr
 - **Platform validation**: Ensuring compatibility with enterprise platforms and databases (SQL Server, DB2, IBM MQ, MongoDB)
 
 ## Value Proposition
-- **Accelerated migration**: Reduces manual effort through AI-assisted code transformation
-- **Risk mitigation**: Comprehensive testing and validation at each migration step
-- **Platform compatibility**: Ensures applications work across diverse enterprise environments
+- **Accelerated migration**: Reduces manual effort through AI-assisted code transformation with Kiro Specs, Skills, and Custom Agents
+- **Risk mitigation**: Comprehensive testing and validation at each migration step via Kiro Hooks
+- **Platform compatibility**: Ensures applications work across diverse enterprise environments using Kiro Powers
 - **Knowledge transfer**: Builds team expertise in modern Java development practices
 - **Repeatable process**: Establishes standardized migration methodology for future projects

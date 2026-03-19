@@ -1,0 +1,285 @@
+# Implementation Plan: Kiro IDE Workshop Transformation
+
+## Overview
+
+Transform the Java Framework Migration Workshop from Amazon Q Developer IDE Extension to AWS Kiro IDE. All 14+ markdown files, the sample-app README, and the `.amazonq/rules/` directory are updated. The sample application source code remains untouched. Tasks are ordered so each builds on the previous: file rename first, then global replacements, then section-level rewrites, then new feature content, then directory migration, then cross-cutting updates, and finally validation.
+
+## Tasks
+
+- [x] 1. Rename workshop file and update all cross-references
+  - [x] 1.1 Rename `Amazon-Q-Developer-IDE-Workshop.md` to `Kiro-IDE-Workshop.md`
+    - Create `Kiro-IDE-Workshop.md` with the content of `Amazon-Q-Developer-IDE-Workshop.md`
+    - Delete `Amazon-Q-Developer-IDE-Workshop.md`
+    - _Requirements: 1.1_
+  - [x] 1.2 Update all internal links referencing the old filename
+    - Search every markdown file for links to `Amazon-Q-Developer-IDE-Workshop.md` (including `./Amazon-Q-Developer-IDE-Workshop.md` and anchor variants like `Amazon-Q-Developer-IDE-Workshop.md#section`)
+    - Replace each link target with `Kiro-IDE-Workshop.md` (preserving anchors and relative paths)
+    - _Requirements: 1.2, 17.1_
+
+- [x] 2. Apply global text replacements across all markdown files
+  - [x] 2.1 Apply Priority 1 replacements (exact phrases, longest first)
+    - Replace in order across all markdown files (excluding `sample-app/src/`):
+      - `Amazon Q Developer IDE Extension` → `Kiro IDE`
+      - `Amazon Q Developer IDE extension` → `Kiro IDE`
+      - `Amazon Q Developer IDE` → `Kiro IDE`
+      - `Amazon Q Developer` → `Kiro IDE`
+      - `Q Developer` → `Kiro IDE`
+    - Preserve content inside fenced code blocks containing Java, Maven XML, or shell commands unrelated to Q Developer
+    - _Requirements: 2.1, 2.3_
+  - [x] 2.2 Apply Priority 2 replacements (standalone references)
+    - Replace `Amazon Q` → `Kiro` (standalone, not part of URLs or already-handled phrases)
+    - _Requirements: 2.2_
+  - [x] 2.3 Apply Priority 3 replacements (feature-specific)
+    - `Q Chat` → `Kiro Chat`
+    - `Q icon` → `Kiro icon`
+    - `Q panel` → `Kiro panel`
+    - `Ask Q:` → `Ask Kiro:`
+    - `Ask Q ` → `Ask Kiro `
+    - `ask Q:` → `ask Kiro:`
+    - `ask Q ` → `ask Kiro `
+    - _Requirements: 2.4, 2.5, 8.1_
+  - [x] 2.4 Apply Priority 4 replacements (authentication)
+    - `AWS Builder ID` → `Kiro account`
+    - `IAM Identity Center` → `Kiro account`
+    - `Builder ID` → `Kiro account` (standalone)
+    - _Requirements: 3.3_
+  - [x] 2.5 Apply Priority 5 replacements (commands)
+    - `/transform` → `Kiro Specs` (in descriptive text, not inside preserved code blocks)
+    - `/review` → `Kiro Hooks` (in descriptive text)
+    - `Amazon Q: Transform` → `Kiro Specs workflow`
+    - `Amazon Q: Review Code` → `Kiro Hooks`
+    - `Amazon Q: Review` → `Kiro Hooks`
+    - _Requirements: 4.2, 6.3_
+  - [x] 2.6 Apply Priority 6 replacements (badges and external URLs)
+    - Replace Amazon Q badge/shield URLs with Kiro IDE equivalents or remove if no equivalent exists
+    - Replace Amazon Q documentation URLs (e.g., `docs.aws.amazon.com/amazonq`) with Kiro IDE documentation URLs or placeholder `[Kiro IDE Documentation URL]`
+    - _Requirements: 1.3, 17.3, 17.4_
+
+- [x] 3. Checkpoint — Verify global replacements
+  - Ensure no `Amazon Q Developer`, `Q Developer`, `Q Chat`, `Q icon`, `Q panel`, `Ask Q:`, `AWS Builder ID`, `IAM Identity Center` strings remain in any markdown file (outside preserved Java/XML code blocks)
+  - Ensure all tests pass, ask the user if questions arise.
+
+- [x] 4. Rewrite IDE setup instructions (Module 1 + PARTICIPANT-SETUP.md)
+  - [x] 4.1 Rewrite PARTICIPANT-SETUP.md for Kiro IDE standalone installation
+    - Replace VS Code/IntelliJ IDE options with Kiro IDE as the single IDE choice
+    - Replace extension installation steps with: download Kiro IDE, install, launch, sign in with Kiro account
+    - Replace pre-workshop checklist Amazon Q extension verification with Kiro IDE installation verification
+    - _Requirements: 3.1, 3.2, 3.5_
+  - [x] 4.2 Rewrite Module 1 environment setup for Kiro IDE
+    - Replace Amazon Q extension install/configure steps with Kiro IDE installation, sign-in, and workspace setup
+    - Add instructions for creating `.kiro/steering/` files with migration-specific context (Java 8→21, Spring 5→6 goals and constraints)
+    - Add instructions for browsing and installing relevant Powers from the Kiro Powers catalog (e.g., AWS documentation Power) via the Powers management panel
+    - Add guidance on planning which custom agents to create based on migration scope (e.g., one agent per major framework migration)
+    - Update completion criteria from "Q extension working" to "Kiro IDE installed and responding"
+    - _Requirements: 3.4, 7.1, 9.1, 11.4_
+
+- [x] 5. Rewrite Module 2 — Java migration workflow with Specs, Custom Agent, Skill, and Power Builder
+  - [x] 5.1 Replace `/transform` workflow with Kiro Specs workflow
+    - Replace instructions to run `/transform` for Java version upgrade with: creating a Kiro Specs workflow (requirements → design → tasks) for the Java migration
+    - Replace transformation progress tracking via Q Developer with tracking via Kiro Specs task completion
+    - _Requirements: 4.1, 4.3, 4.4_
+  - [x] 5.2 Introduce Java Migration Custom Agent
+    - Add instructions for creating and configuring a Kiro Custom Agent as a "Java Migration Agent" with Java 8→21 expertise
+    - Include: (a) agent purpose and expertise scope, (b) how to create and configure it, (c) best practices for prompting and delegating tasks
+    - Add instructions for using Kiro Chat to request file-level transformations via the agent
+    - _Requirements: 4.1, 11.3_
+  - [x] 5.3 Introduce Java 8→21 Migration Skill
+    - Add instructions for creating a "Java 8→21 Migration" Kiro Skill that automates repetitive Java modernization patterns (Date→LocalDateTime, deprecated API removal, etc.)
+    - Include: (a) what the skill automates, (b) how to create it, (c) when it triggers or how to invoke it
+    - _Requirements: 4.5, 10.3_
+  - [x] 5.4 Introduce Power Builder for Java Framework Migration Power
+    - Add instructions for using the Kiro Power Builder to create a "Java Framework Migration" Power that packages: (a) migration documentation and best practices as POWER.md, (b) steering files for Java 8→21 migration patterns, (c) optionally an MCP server for migration-specific tooling
+    - Include: purpose, how to build it, how to activate and use its tools/documentation, how to share with team members
+    - _Requirements: 7.2, 7.5_
+  - [x] 5.5 Update Module 2 feature summary table
+    - Replace "Key Q Developer Commands Used" with "Key Kiro IDE Features Used"
+    - Add entries for Kiro Specs, Kiro Chat, Kiro Code Suggestions, Java Migration Custom Agent, Java 8→21 Migration Skill, Java Framework Migration Power
+    - _Requirements: 14.1, 14.2, 14.4, 14.5_
+
+- [x] 6. Rewrite Module 3 — Spring migration with Custom Agent, Skills, and Power activation
+  - [x] 6.1 Introduce Spring Migration Custom Agent
+    - Add instructions for creating a Kiro Custom Agent configured as a "Spring Migration Agent" with Spring 5→6 and Jakarta namespace expertise
+    - Include: (a) purpose and expertise scope, (b) how to create and configure it, (c) best practices for prompting
+    - _Requirements: 5.1, 11.3_
+  - [x] 6.2 Introduce Jakarta Namespace Migration Skill
+    - Add instructions for creating a "Jakarta Namespace Migration" Kiro Skill that automates the javax.* → jakarta.* package rename pattern across files
+    - Include: (a) what the skill automates, (b) how to create it, (c) when/how to invoke it
+    - _Requirements: 5.2, 10.3_
+  - [x] 6.3 Introduce Spring Security Upgrade Skill
+    - Add instructions for creating a "Spring Security Upgrade" Kiro Skill for WebSecurityConfigurerAdapter → SecurityFilterChain pattern
+    - Include: (a) what the skill automates, (b) how to create it, (c) when/how to invoke it
+    - _Requirements: 5.3, 10.3_
+  - [x] 6.4 Update Q Chat instructions to Kiro Chat with Context Keys
+    - Replace Q Chat migration guidance with Kiro Chat using the Spring Migration Agent and Context Keys (#File for individual files, #Folder for package-wide changes)
+    - _Requirements: 5.4, 8.2_
+  - [x] 6.5 Demonstrate activating the Java Framework Migration Power
+    - Add instructions for activating and using the "Java Framework Migration" Power built in Module 2, and extending it with Spring 5→6 and Jakarta namespace migration guidance
+    - _Requirements: 7.3_
+  - [x] 6.6 Update Module 3 feature summary table
+    - Replace "Key Q Developer Commands Used" with "Key Kiro IDE Features Used"
+    - Add entries for Kiro Chat, Kiro Code Suggestions, Spring Migration Custom Agent, Jakarta Namespace Migration Skill, Spring Security Upgrade Skill, Java Framework Migration Power
+    - _Requirements: 14.1, 14.4, 14.5_
+
+- [x] 7. Rewrite Module 4 — Testing and validation with Hooks, Skill, and Context Keys
+  - [x] 7.1 Replace `/review` workflow with Kiro Hooks
+    - Replace instructions to run `/review` for security validation with configuring Kiro Hooks for automated review on file save
+    - Add Kiro Chat for on-demand review using #Git Diff context key
+    - Replace review results from Q Developer with review results from Kiro Hooks output
+    - _Requirements: 6.1, 6.4, 6.5_
+  - [x] 7.2 Introduce JUnit 4→5 Migration Skill
+    - Add instructions for creating a "JUnit 4→5 Migration" Kiro Skill that automates test annotation conversion, assertion updates, and lifecycle method changes
+    - Include: (a) what the skill automates, (b) how to create it, (c) when/how to invoke it
+    - _Requirements: 6.2, 10.3_
+  - [x] 7.3 Update troubleshooting and review sections with Context Keys
+    - Replace "ask Q for help" with Kiro Chat using #Problems context key for compilation errors
+    - Replace "ask Q to review changes" with Kiro Chat using #Git Diff context key
+    - _Requirements: 8.3, 8.4_
+  - [x] 7.4 Update Module 4 feature summary table
+    - Replace "Key Q Developer Commands Used" with "Key Kiro IDE Features Used"
+    - Add entries for Kiro Hooks, Kiro Chat, Kiro Code Suggestions, JUnit 4→5 Migration Skill, Context Keys (#Problems, #Git Diff)
+    - _Requirements: 14.1, 14.3, 14.4, 14.5_
+
+- [x] 8. Rewrite Module 5 — Platform validation with Powers and Chat
+  - [x] 8.1 Introduce Platform Deployment Power
+    - Add instructions for how a Power can bundle platform-specific deployment knowledge (JBoss EAP, WebSphere, Mainframe) into a shareable "Platform Deployment" Power
+    - Include: (a) purpose and contents, (b) how to build it with Power Builder, (c) how to activate and use its tools/documentation, (d) how to share with team members
+    - _Requirements: 7.4, 7.5_
+  - [x] 8.2 Update Module 5 chat instructions and feature summary table
+    - Replace Q Chat references with Kiro Chat for platform guidance
+    - Replace "Key Q Developer Commands Used" with "Key Kiro IDE Features Used"
+    - Add entries for Kiro Chat, Kiro Code Suggestions, Platform Deployment Power
+    - _Requirements: 14.1, 14.4, 14.5_
+
+- [x] 9. Checkpoint — Verify module rewrites
+  - Ensure all five modules have been updated with correct Kiro feature introductions
+  - Ensure each module's feature summary table is titled "Key Kiro IDE Features Used" and lists all Kiro features introduced in that module
+  - Ensure all tests pass, ask the user if questions arise.
+
+- [x] 10. Overhaul Quick Reference Guide
+  - [x] 10.1 Replace "Essential Q Developer Commands" table with "Kiro IDE Features" table
+    - New table covers: Specs, Hooks, Steering, Chat, Code Suggestions, Context Keys, Skills, Custom Agents, Powers
+    - _Requirements: 13.1_
+  - [x] 10.2 Replace "Using /transform" and "Using /review" subsections
+    - "Using /transform" → "Using Kiro Specs" with requirements → design → tasks workflow description
+    - "Using /review" → "Using Kiro Hooks" with automated review on file save and on-demand via Kiro Chat
+    - _Requirements: 13.2_
+  - [x] 10.3 Replace "Q Developer Pro Tips" with "Kiro IDE Tips"
+    - Update tips to reference Kiro-specific features including Skills, Custom Agents, and Powers
+    - Update example queries to use Kiro Chat syntax with Context Keys (#File, #Folder, #Problems, #Git Diff)
+    - _Requirements: 13.3, 13.4_
+  - [x] 10.4 Add "Kiro Skills" section to Quick Reference Guide
+    - Explain how to create, test, optimize, and trigger skills for migration tasks
+    - List all workshop skills with their purpose: Java 8→21 Migration, Jakarta Namespace Migration, Spring Security Upgrade, JUnit 4→5 Migration
+    - _Requirements: 10.1, 10.2_
+  - [x] 10.5 Add "Kiro Custom Agents" section to Quick Reference Guide
+    - Explain how to create, configure, and use custom agents for migration tasks
+    - List all workshop agents with their purpose and configuration: Java Migration Agent, Spring Migration Agent
+    - _Requirements: 11.1, 11.2_
+  - [x] 10.6 Add "Kiro Powers" section to Quick Reference Guide
+    - Explain: (a) what Powers are (documentation + steering + optional MCP servers), (b) how to browse and install from catalog, (c) how to activate and use, (d) how to build custom Powers with Power Builder
+    - List all workshop Powers: Java Framework Migration Power, Platform Deployment Power
+    - Explain Power structure (POWER.md, steering files, optional MCP servers), validation, and sharing
+    - _Requirements: 12.1, 12.2, 12.3_
+  - [x] 10.7 Update "Workshop Completion Certificate" section
+    - Replace "Use Amazon Q Developer IDE extension effectively" with "Use Kiro IDE effectively including Specs, Hooks, Steering, Skills, Custom Agents, and Powers"
+    - _Requirements: 2.1_
+  - [x] 10.8 Update post-workshop resources and external links
+    - Replace Amazon Q Developer User Guide link with Kiro IDE documentation URL or placeholder `[Kiro IDE Documentation URL]`
+    - Replace "AWS Support for Q Developer issues" with Kiro IDE support reference
+    - Replace "Team comfortable with Q Developer" with "Team comfortable with Kiro IDE"
+    - _Requirements: 17.3, 17.4_
+  - [x] 10.9 Update Common Error Patterns section
+    - Replace all `Q:` prompt patterns with `Kiro:` or `Ask Kiro:` patterns
+    - Add Context Key usage hints (e.g., use #Problems for compilation errors, #File for specific file context)
+    - _Requirements: 8.1, 8.3_
+  - [x] 10.10 Update Best Practices Checklist
+    - Replace "Ask Q before making assumptions" with "Ask Kiro before making assumptions"
+    - Replace "Use `/review` to catch issues early" with "Use Kiro Hooks to catch issues early"
+    - _Requirements: 2.1, 6.4_
+
+- [x] 11. Update supporting documents
+  - [x] 11.1 Update Workshop-Agenda.md
+    - Replace all Amazon Q Developer references in session descriptions with Kiro IDE terminology
+    - _Requirements: 15.1_
+  - [x] 11.2 Update INSTRUCTOR-QUICK-START.md
+    - Replace Q Developer setup and demo instructions with Kiro IDE setup and demos
+    - Add references to Skills, Custom Agents, and Powers demonstrations
+    - _Requirements: 15.2_
+  - [x] 11.3 Update TRAINING-KICKSTART.md
+    - Replace Q Developer verification steps with Kiro IDE verification
+    - _Requirements: 15.3_
+  - [x] 11.4 Update Developer-Test-Walkthrough.md and ACTUAL-TEST-RESULTS.md
+    - Replace Q Developer feature references with Kiro IDE equivalents
+    - _Requirements: 15.4_
+  - [x] 11.5 Update sample-app/README.md
+    - Replace Amazon Q feature references with Kiro IDE features (Specs, Chat, Hooks, Skills, Custom Agents, Powers)
+    - _Requirements: 15.5_
+
+- [x] 12. Update README.md branding and content
+  - [x] 12.1 Update README.md title and badges
+    - Replace title referencing "Amazon Q Developer IDE Extension" with "AWS Kiro IDE"
+    - Replace Amazon Q Developer badges and shield URLs with Kiro IDE equivalents or remove if no equivalent exists
+    - _Requirements: 1.3, 1.4_
+  - [x] 12.2 Update README.md feature descriptions and links
+    - Replace all Amazon Q Developer feature descriptions with Kiro IDE equivalents
+    - Update link to main workshop file from `Amazon-Q-Developer-IDE-Workshop.md` to `Kiro-IDE-Workshop.md`
+    - _Requirements: 2.1, 17.1_
+
+- [x] 13. Migrate `.amazonq/rules/memory-bank/` to `.kiro/steering/`
+  - [x] 13.1 Create `.kiro/steering/` directory and migrate content
+    - Create `.kiro/steering/project-context.md` from `.amazonq/rules/memory-bank/product.md` — reframe as Kiro steering context for the migration project
+    - Create `.kiro/steering/tech-stack.md` from `.amazonq/rules/memory-bank/tech.md` — migration targets and dependency versions as steering guidance
+    - Create `.kiro/steering/coding-guidelines.md` from `.amazonq/rules/memory-bank/guidelines.md` — code patterns and conventions as Kiro steering rules
+    - Create `.kiro/steering/project-structure.md` from `.amazonq/rules/memory-bank/structure.md` — architecture and structure as Kiro steering context
+    - Each file should clearly describe the migration scope, target versions, and constraints relevant to the workshop
+    - _Requirements: 9.2, 9.3_
+  - [x] 13.2 Update references to `.amazonq/rules/` in all markdown files
+    - Replace `.amazonq/rules/memory-bank/` path references with `.kiro/steering/` in descriptive text across all files
+    - _Requirements: 9.2_
+  - [x] 13.3 Remove `.amazonq/rules/memory-bank/` directory
+    - Delete the four files in `.amazonq/rules/memory-bank/` and the directory itself after migration is confirmed
+    - _Requirements: 9.2_
+
+- [x] 14. Checkpoint — Verify full transformation
+  - Ensure all tests pass, ask the user if questions arise.
+  - Verify: renamed file exists (`Kiro-IDE-Workshop.md`) and old file does not (`Amazon-Q-Developer-IDE-Workshop.md`)
+  - Verify: no Q Developer terminology remains in any markdown file (outside preserved Java/XML code blocks)
+  - Verify: no VS Code/IntelliJ extension installation or Builder ID/IAM Identity Center references remain
+  - Verify: `.kiro/steering/` files exist with adapted content
+  - Verify: all internal links are valid (especially links to renamed file)
+  - Verify: sample-app/src/ Java source files are unchanged
+  - Verify: pom.xml is unchanged
+
+- [x] 15. Validate content preservation and link integrity
+  - [x] 15.1 Verify sample application source code is untouched
+    - Confirm all files in `sample-app/src/` are byte-identical to their original state
+    - Confirm `sample-app/pom.xml` is unchanged
+    - _Requirements: 16.1, 16.2_
+  - [x] 15.2 Verify Java/Spring/platform code examples in markdown are preserved
+    - Spot-check fenced code blocks containing Java code, Maven XML, Spring XML, shell commands, and platform deployment XML across modules
+    - Confirm code block content is unchanged
+    - _Requirements: 16.3, 16.4_
+  - [x] 15.3 Verify workshop structure is preserved
+    - Confirm 5-module structure with 8-hour core + 90-minute optional session is unchanged
+    - _Requirements: 16.5_
+  - [x] 15.4 Verify internal non-renamed links are preserved
+    - Confirm links to Module files, setup files, and reference files that were not renamed remain unchanged
+    - _Requirements: 17.2_
+  - [x] 15.5 Verify external links are updated
+    - Confirm all Amazon Q Developer documentation URLs are replaced with Kiro IDE documentation URLs or placeholder `[Kiro IDE Documentation URL]`
+    - _Requirements: 17.3, 17.4_
+
+- [x] 16. Final checkpoint — Complete transformation validation
+  - Ensure all tests pass, ask the user if questions arise.
+  - Run a final sweep for any remaining Q Developer terminology across all files
+  - Confirm every Kiro feature (Skills, Custom Agents, Powers) appears in both its relevant module AND the Quick Reference Guide
+  - Confirm all feature summary tables are correctly titled and populated
+
+## Notes
+
+- Tasks marked with `*` are optional and can be skipped for faster MVP (none in this plan — all tasks are core implementation)
+- Each task references specific requirements for traceability
+- Checkpoints at tasks 3, 9, 14, and 16 ensure incremental validation
+- The sample application source code (`sample-app/src/` and `sample-app/pom.xml`) must never be modified
+- Text replacements must be applied in longest-match-first order to prevent partial replacements (e.g., "Amazon Q Developer" before "Amazon Q")
+- Code blocks containing Java, Maven XML, or shell commands unrelated to Q Developer features must be preserved during text replacement

@@ -1,10 +1,10 @@
-# Amazon Q Developer IDE Workshop - Detailed Agenda
+# Kiro IDE Workshop - Detailed Agenda
 
 ## Java 8 + Spring 5.2.3 → Java 21 + Spring 6 Migration
 
 **Date**: [Workshop Date]  
 **Duration**: 8 hours (9:00 AM - 5:30 PM)  
-**Format**: Hands-on training with Amazon Q Developer IDE Extension  
+**Format**: Hands-on training with Kiro IDE  
 **Participants**: [Team Name/Count]
 
 ---
@@ -12,9 +12,8 @@
 ## Pre-Workshop Requirements (Complete Before Day 1)
 
 **Participants must have:**
-- [ ] Laptop with VS Code or IntelliJ IDEA installed
-- [ ] Amazon Q Developer IDE extension installed
-- [ ] AWS credentials configured (Builder ID or IAM Identity Center)
+- [ ] Kiro IDE installed (download from [Kiro IDE Download URL])
+- [ ] Signed in with Kiro account
 - [ ] Java 21 JDK installed
 - [ ] Maven 3.8+ or Gradle 7+ installed
 - [ ] Git installed and configured
@@ -37,7 +36,7 @@ git --version  # Should show Git 2.x+
 **Topics:**
 - Workshop objectives and outcomes
 - Migration scope: 27 applications overview
-- Amazon Q Developer capabilities
+- Kiro IDE capabilities (Specs, Hooks, Steering, Skills, Custom Agents, Powers, Chat, Code Suggestions)
 - Workshop structure and schedule
 - Q&A setup and support channels
 
@@ -51,25 +50,26 @@ git --version  # Should show Git 2.x+
 
 ### 9:15 AM - 10:30 AM: Module 1 - Environment Setup & Assessment (75 min)
 
-#### 9:15 AM - 9:35 AM: Amazon Q Setup (20 min)
+#### 9:15 AM - 9:35 AM: Kiro Setup (20 min)
 **Hands-on:**
-- Install and authenticate Amazon Q extension
-- Test Q Chat functionality
-- Explore Q Developer interface
-- Run first Q query
+- Launch Kiro IDE and sign in with Kiro account
+- Test Kiro Chat functionality
+- Explore Kiro IDE interface (Specs, Hooks, Steering, Chat)
+- Browse and install relevant Powers from the Kiro Powers catalog
+- Run first Kiro query
 
-**Q Queries to practice:**
+**Kiro Queries to practice:**
 ```
 "Hello, can you help me with Java migration?"
 "What can you help me with?"
-"Explain how /transform works"
+"Explain how Kiro Specs works"
 ```
 
 #### 9:35 AM - 9:50 AM: Project Setup (15 min)
 **Hands-on:**
 - Open sample application
 - Verify build successful
-- Explore project structure with Q
+- Explore project structure with Kiro
 - Create git branch for migration
 
 **Commands:**
@@ -81,12 +81,14 @@ git tag pre-migration-baseline
 
 #### 9:50 AM - 10:20 AM: Initial Assessment (30 min)
 **Hands-on:**
-- Run Q analysis on project
+- Run Kiro analysis on project
+- Set up Kiro Steering files for migration context
 - Identify dependencies to update
 - Document risk areas
 - Create migration plan
+- Plan which Custom Agents to create for migration phases
 
-**Key Q Queries:**
+**Key Kiro Queries:**
 ```
 "Analyze this Java 8 + Spring 5.2.3 application for migration complexity"
 "List all dependencies that need updates"
@@ -95,7 +97,7 @@ git tag pre-migration-baseline
 
 #### 10:20 AM - 10:30 AM: Baseline Validation (10 min)
 **Hands-on:**
-- Run `/review` on current code
+- Run `Kiro Hooks` on current code
 - Execute all tests
 - Document baseline metrics
 - Review migration checklist
@@ -110,29 +112,31 @@ git tag pre-migration-baseline
 
 #### 10:45 AM - 11:00 AM: Transformation Setup (15 min)
 **Hands-on:**
-- Understand /transform command
+- Understand Kiro Specs command
 - Review transformation options
 - Prepare for code transformation
 - Set expectations
 
-**Q Query:**
+**Kiro Query:**
 ```
 "What should I expect when transforming Java 8 to Java 21?"
 ```
 
 #### 11:00 AM - 11:30 AM: Execute Transformation (30 min)
 **Hands-on:**
-- Run `/transform` command
-- Monitor transformation progress
+- Create Kiro Specs workflow (requirements → design → tasks)
+- Configure Java Migration Custom Agent for Java 8→21 expertise
+- Create Java 8→21 Migration Skill for repetitive patterns
+- Monitor transformation progress via Kiro Specs task completion
 - Review transformation summary
 - Examine changed files
 
 **Activity:**
 ```
-1. Command Palette → "Amazon Q: Transform"
+1. Command Palette → "Kiro Specs workflow"
 2. Select: Java 8 → Java 21
 3. Review changes in git diff
-4. Ask Q to explain key changes
+4. Ask Kiro to explain key changes
 ```
 
 #### 11:30 AM - 12:15 PM: Fix Compilation Errors (45 min)
@@ -145,7 +149,7 @@ git tag pre-migration-baseline
 **For each error:**
 ```
 1. Copy error message
-2. Ask Q: "How do I fix this Java 21 error: [error]"
+2. Ask Kiro: "How do I fix this Java 21 error: [error]"
 3. Apply solution
 4. Rebuild and verify
 ```
@@ -161,9 +165,10 @@ git tag pre-migration-baseline
 - Update Java version in pom.xml
 - Update Maven plugins
 - Update third-party libraries
+- Build Java Framework Migration Power with Power Builder
 - Run tests and validate
 
-**Q Queries:**
+**Kiro Queries:**
 ```
 "Update Maven configuration for Java 21"
 "Is [library] version [X] compatible with Java 21?"
@@ -185,7 +190,7 @@ git tag pre-migration-baseline
 - Add Jakarta EE dependencies
 - Update pom.xml
 
-**Q Queries:**
+**Kiro Queries:**
 ```
 "Generate updated Spring 6 dependencies for my pom.xml"
 "What Jakarta EE dependencies do I need?"
@@ -194,12 +199,14 @@ git tag pre-migration-baseline
 
 #### 2:15 PM - 2:40 PM: Namespace Migration (25 min)
 **Hands-on:**
+- Configure Spring Migration Custom Agent for Spring 5→6 and Jakarta expertise
+- Create Jakarta Namespace Migration Skill for automated javax.* → jakarta.* conversion
 - Identify all javax.* imports
-- Convert to jakarta.* imports
+- Convert to jakarta.* imports using the Skill
 - Verify complete migration
 - Handle edge cases
 
-**Q Query:**
+**Kiro Query:**
 ```
 "Convert all javax imports to jakarta in this file: [paste code]"
 ```
@@ -214,6 +221,8 @@ javax.validation.* → jakarta.validation.*
 #### 2:40 PM - 3:30 PM: Spring Configuration Updates (50 min)
 **Hands-on:**
 - Update Security configuration
+- Create Spring Security Upgrade Skill for SecurityFilterChain pattern
+- Activate Java Framework Migration Power for Spring migration guidance
 - Modernize Web configuration
 - Update DataSource configuration
 - Update Controller annotations
@@ -230,7 +239,7 @@ WebSecurityConfigurerAdapter → SecurityFilterChain
 authorizeRequests() → authorizeHttpRequests()
 ```
 
-**Q Queries:**
+**Kiro Queries:**
 ```
 "Migrate this Spring Security configuration to Spring 6"
 "How do I replace WebSecurityConfigurerAdapter?"
@@ -244,7 +253,7 @@ authorizeRequests() → authorizeHttpRequests()
 - Build and start application
 - Test endpoints
 
-**Q Query:**
+**Kiro Query:**
 ```
 "Review these Spring Boot properties for Spring 6 compatibility"
 ```
@@ -260,11 +269,13 @@ authorizeRequests() → authorizeHttpRequests()
 #### 4:00 PM - 4:30 PM: Test Framework Migration (30 min)
 **Hands-on:**
 - Update test dependencies
+- Create JUnit 4→5 Migration Skill for automated test modernization
+- Configure Kiro Hooks for automated code review on file save
 - Migrate JUnit 4 → JUnit 5
 - Update Mockito usage
 - Fix test annotations
 
-**Q Query:**
+**Kiro Query:**
 ```
 "Migrate this JUnit 4 test to JUnit 5 for Spring 6: [paste test]"
 ```
@@ -292,7 +303,7 @@ mvn test -Dtest=SpecificTest
 
 **For failures:**
 ```
-Ask Q: "This test fails after Spring 6 migration: [error]. How do I fix it?"
+Ask Kiro: "This test fails after Spring 6 migration: [error]. How do I fix it?"
 ```
 
 #### 4:50 PM - 5:15 PM: Integration Testing (25 min)
@@ -302,7 +313,7 @@ Ask Q: "This test fails after Spring 6 migration: [error]. How do I fix it?"
 - Test external integrations
 - Validate connectivity
 
-**Q Queries:**
+**Kiro Queries:**
 ```
 "Generate Spring 6 integration test for SQL Server database"
 "Generate REST API integration test using MockMvc"
@@ -311,7 +322,7 @@ Ask Q: "This test fails after Spring 6 migration: [error]. How do I fix it?"
 
 #### 5:15 PM - 5:30 PM: Final Validation & Review (15 min)
 **Hands-on:**
-- Run `/review` on migrated code
+- Run `Kiro Hooks` on migrated code
 - Execute full test suite
 - Verify code coverage
 - Review security findings
@@ -350,13 +361,14 @@ mvn jacoco:report
 
 #### 5:45 PM - 6:20 PM: JBoss EAP Configuration (35 min)
 **Hands-on:**
+- Build Platform Deployment Power to bundle deployment knowledge
 - Verify JBoss compatibility
 - Create deployment descriptors
 - Configure module exclusions
 - Package as WAR
 - Test deployment
 
-**Q Queries:**
+**Kiro Queries:**
 ```
 "What JBoss EAP version supports Java 21 and Spring 6?"
 "Generate jboss-deployment-structure.xml for Spring 6"
@@ -371,7 +383,7 @@ mvn jacoco:report
 - Configure resources
 - Test deployment
 
-**Q Queries:**
+**Kiro Queries:**
 ```
 "What WebSphere version supports Java 21 and Spring 6?"
 "Generate ibm-web-ext.xml for Spring 6 application"
@@ -386,7 +398,7 @@ mvn jacoco:report
 - Create deployment package
 - Generate startup scripts
 
-**Q Queries:**
+**Kiro Queries:**
 ```
 "How do I optimize Spring 6 for mainframe deployment?"
 "Generate JVM arguments for Java 21 on mainframe"
@@ -444,10 +456,13 @@ mvn jacoco:report
 - Hands-on assistance during exercises
 - Q&A throughout the day
 
-**Amazon Q Developer:**
+**Kiro IDE:**
 - Primary tool for guidance and troubleshooting
-- Available for all questions
-- Real-time code assistance
+- Kiro Chat with Context Keys (#File, #Folder, #Problems, #Git Diff) for targeted assistance
+- Kiro Specs for structured migration planning
+- Kiro Hooks for automated code review
+- Kiro Skills for automating repetitive migration patterns
+- Real-time Kiro Code Suggestions during development
 
 **Peer Support:**
 - Collaborate with other participants
@@ -460,7 +475,7 @@ mvn jacoco:report
 
 By end of workshop, participants should:
 - [ ] Successfully migrate sample application to Java 21 + Spring 6
-- [ ] Be proficient with Amazon Q Developer IDE extension
+- [ ] Be proficient with Kiro IDE (Specs, Hooks, Steering, Skills, Custom Agents, Powers, Chat)
 - [ ] Understand common migration patterns
 - [ ] Know how to troubleshoot migration issues
 - [ ] Have platform-specific deployment knowledge
@@ -473,7 +488,7 @@ By end of workshop, participants should:
 **End of Day Survey:**
 - Workshop content quality
 - Instructor effectiveness
-- Amazon Q Developer usefulness
+- Kiro IDE usefulness (Specs, Hooks, Skills, Custom Agents, Powers)
 - Hands-on exercise value
 - Suggestions for improvement
 
@@ -489,7 +504,7 @@ By end of workshop, participants should:
 
 **Workshop Instructor**: [Name, Email]  
 **AWS Support**: [Support channel]  
-**Amazon Q Developer**: [Documentation link]  
+**Kiro IDE**: [Documentation link]  
 **Internal Team Lead**: [Name, Email]
 
 ---

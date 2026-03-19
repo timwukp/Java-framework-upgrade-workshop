@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Smart MCP Disable and Cleanup",
+  "description": "After the agent completes a task, disables MCP_DOCKER if it was used and cleans up the allowed categories temp file.",
+  "version": "1",
+  "when": {
+    "type": "agentStop"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "The agent task has completed. Do two things:\n1. Check if MCP_DOCKER tools were used during this session (any tool prefixed with mcp_MCP_DOCKER_). If yes, read ~/.kiro/settings/mcp.json, set disabled to true for MCP_DOCKER, and write it back. Preserve all other settings.\n2. Clean up by deleting /tmp/kiro_mcp_allowed_categories.txt if it exists (run: rm -f /tmp/kiro_mcp_allowed_categories.txt).\nIf no MCP_DOCKER tools were used, just clean up the temp file."
+  }
+}

@@ -1,0 +1,50 @@
+# Build artifacts
+target/
+build/
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Environment files
+.env
+*.env.local
+
+# Logs
+*.log
+logs/
+
+# Dependency directories
+node_modules/
+
+# Local skill development (not part of workshop)
+pre-push-review/
+
+# Compiled Python
+__pycache__/
+*.py[cod]

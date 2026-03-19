@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Auto-invoke Reference Updater for Tasks 10-13",
+  "description": "When a spec task starts executing, check if it's Task 10, 11, 12, or 13 (Quick Reference Guide overhaul, supporting docs, README branding, directory migration). If so, delegate the work to the workshop-reference-updater sub-agent.",
+  "version": "1",
+  "when": {
+    "type": "preTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Check the task that is about to execute. If it is Task 10 (Overhaul Quick Reference Guide), Task 11 (Update supporting documents), Task 12 (Update README.md branding and content), or Task 13 (Migrate .amazonq/rules/memory-bank/ to .kiro/steering/), you MUST delegate this task to the \"workshop-reference-updater\" sub-agent using invokeSubAgent. Pass the full task description including all subtasks as the prompt. The workshop-reference-updater handles: Quick Reference Guide overhaul (new features table, Skills/Agents/Powers sections), supporting document updates (Agenda, Instructor, Training, Test docs), README branding, and .amazonq/rules/ to .kiro/steering/ directory migration. If the task is NOT Task 10-13, do nothing and proceed normally."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "MCP Tool Gatekeeper",
+  "description": "Gatekeeper that blocks MCP_DOCKER tools not relevant to the current prompt. Reads allowed categories from /tmp/kiro_mcp_allowed_categories.txt and blocks tools outside those categories.",
+  "version": "1",
+  "when": {
+    "type": "preToolUse",
+    "toolTypes": [
+      "@mcp.*MCP_DOCKER.*"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "An MCP_DOCKER tool is about to be invoked. Before allowing it, check if this specific tool is permitted for the current task.\n\nRead /tmp/kiro_mcp_allowed_categories.txt to see which categories are allowed. Then check if the tool being invoked belongs to one of those allowed categories using this mapping:\n\n- GITHUB: get_me, search_repositories, search_code, search_issues, search_pull_requests, search_users, create_repository, fork_repository, create_branch, list_branches, list_commits, get_commit, list_tags, get_tag, list_releases, get_latest_release, get_release_by_tag, get_file_contents, create_or_update_file, delete_file, push_files, list_issues, issue_read, issue_write, list_pull_requests, pull_request_read, create_pull_request, update_pull_request, merge_pull_request, add_issue_comment, get_label, get_teams, get_team_members\n- AWS_CLI: call_aws, suggest_aws_commands, prompt_understanding\n- AWS_COST: cost_explorer, cost_optimization, cost_comparison, cost_anomaly, aws_pricing, get_pricing, generate_cost_report, compute_optimizer, budgets, free_tier_usage, sp_performance, ri_performance, storage_lens\n- AWS_CDK: CDKGeneralGuidance, CheckCDKNagSuppressions, ExplainCDKNagRule, analyze_cdk_project, GetAwsSolutionsConstructPattern, SearchGenAICDKConstructs\n- AWS_TERRAFORM: ExecuteTerraformCommand, RunCheckovScan, SearchAwsProviderDocs, SearchAwsccProviderDocs, analyze_terraform_project\n- AWS_GLUE: manage_aws_glue_jobs, manage_aws_glue_crawlers, manage_aws_glue_databases, manage_aws_glue_tables, manage_aws_glue_catalog\n- AWS_ATHENA: manage_aws_athena_query_executions, manage_aws_athena_named_queries, manage_aws_athena_workgroups\n- AWS_EMR: manage_aws_emr_clusters, manage_aws_emr_ec2_instances, manage_aws_emr_ec2_steps\n- AWS_BEDROCK: get_bedrock_patterns, GenerateBedrockAgentSchema, search_agentcore_docs, fetch_agentcore_doc\n- AWS_DOCS: search_documentation, read_documentation, read_sections, recommend\n- BROWSER: start_browser_session, stop_browser_session, browser_navigate, browser_click, browser_type, browser_snapshot, browser_take_screenshot, browser_evaluate\n- PERPLEXITY: perplexity_ask, perplexity_reason, perplexity_research\n- MCP_MGMT: mcp_find, mcp_add, mcp_remove, mcp_exec, mcp_config_set\n\nIf the tool belongs to an allowed category: respond with ACCESS GRANTED, proceed with the tool call.\nIf the tool does NOT belong to any allowed category: respond with ACCESS DENIED - this tool is not needed for the current task. Do not invoke this tool.\nIf /tmp/kiro_mcp_allowed_categories.txt does not exist: respond with ACCESS GRANTED (no restrictions in place)."
+  }
+}

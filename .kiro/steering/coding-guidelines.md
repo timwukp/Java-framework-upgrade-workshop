@@ -1,6 +1,8 @@
 # Development Guidelines and Patterns
 
-## Code Quality Standards Analysis
+> Kiro Steering File — Provides Kiro IDE with coding conventions and migration patterns to follow when assisting with code transformations.
+
+## Code Quality Standards
 
 ### Package Structure Convention
 - **Root Package**: `com.enterprise.user` (enterprise domain-based naming)
@@ -11,7 +13,7 @@
 ### Import Organization Patterns
 - **Grouped Imports**: Standard Java, then third-party, then application imports
 - **Specific Imports**: No wildcard imports, explicit class imports only
-- **javax Namespace**: Currently using javax.* (requires migration to jakarta.*)
+- **jakarta Namespace**: All new code must use jakarta.* (not javax.*) after migration
 - **Framework Imports**: Spring imports grouped together
 
 ### Code Formatting Standards
@@ -61,7 +63,7 @@ private String fieldName;  // Private fields with descriptive names
 private ServiceType serviceName;
 ```
 
-## Semantic Patterns Overview
+## Semantic Patterns
 
 ### Spring Boot Application Pattern
 - **Main Class**: Simple @SpringBootApplication with static main method
@@ -143,47 +145,11 @@ boolean existsByEmail(String email);  // Existence checks
 Optional<Entity> findById(Long id);   // Optional returns for single entities
 ```
 
-## Popular Annotations and Usage
-
-### Entity Annotations (5/5 files use JPA patterns)
-- **@Entity**: JPA entity marking
-- **@Table(name = "table_name")**: Explicit table naming
-- **@Id**: Primary key identification
-- **@GeneratedValue(strategy = GenerationType.IDENTITY)**: Auto-increment IDs
-- **@Column**: Column customization (nullable, unique, name mapping)
-
-### Validation Annotations (Found in User.java)
-- **@NotNull**: Null validation
-- **@Size(min = x, max = y)**: String length validation
-- **@Email**: Email format validation
-- **@Valid**: Request body validation in controllers
-
-### Lombok Annotations (Found in User.java)
-- **@Data**: Generates getters, setters, toString, equals, hashCode
-- **@NoArgsConstructor**: Default constructor generation
-- **@AllArgsConstructor**: All-args constructor generation
-
-### Spring Annotations (Found in 4/5 files)
-- **@SpringBootApplication**: Main application class
-- **@Configuration**: Configuration class marking
-- **@EnableWebSecurity**: Security configuration enablement
-- **@RestController**: REST endpoint controller
-- **@RequestMapping**: HTTP endpoint mapping
-- **@Autowired**: Dependency injection
-
-### Testing Annotations (Found in UserServiceTest.java)
-- **@RunWith(MockitoJUnitRunner.class)**: JUnit 4 test runner
-- **@Mock**: Mock object creation
-- **@InjectMocks**: Mock injection into test subject
-- **@Before/@After**: Test setup and teardown
-- **@Test**: Test method marking
-- **@Test(expected = Exception.class)**: Exception testing
-
 ## Migration-Specific Patterns
 
-### Patterns Requiring Migration (Found in Analysis)
+When Kiro assists with migration, apply these transformation rules:
 
-#### 1. javax to jakarta Namespace (Found in 3/5 files)
+### 1. javax to jakarta Namespace (Found in 3/5 files)
 ```java
 // Current (requires migration)
 import javax.persistence.*;
@@ -196,7 +162,7 @@ import jakarta.validation.constraints.*;
 import jakarta.validation.Valid;
 ```
 
-#### 2. Spring Security Configuration (Found in SecurityConfig.java)
+### 2. Spring Security Configuration (Found in SecurityConfig.java)
 ```java
 // Current (deprecated pattern)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -213,7 +179,7 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 }
 ```
 
-#### 3. Request Mapping Annotations (Found in UserController.java)
+### 3. Request Mapping Annotations (Found in UserController.java)
 ```java
 // Current (verbose pattern)
 @RequestMapping(method = RequestMethod.GET)
@@ -224,7 +190,7 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 @PostMapping
 ```
 
-#### 4. JUnit Testing Framework (Found in UserServiceTest.java)
+### 4. JUnit Testing Framework (Found in UserServiceTest.java)
 ```java
 // Current JUnit 4 pattern
 @RunWith(MockitoJUnitRunner.class)
@@ -241,7 +207,42 @@ import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.*;
 ```
 
-## Best Practices Adherence
+## Popular Annotations and Usage
+
+### Entity Annotations
+- **@Entity**: JPA entity marking
+- **@Table(name = "table_name")**: Explicit table naming
+- **@Id**: Primary key identification
+- **@GeneratedValue(strategy = GenerationType.IDENTITY)**: Auto-increment IDs
+- **@Column**: Column customization (nullable, unique, name mapping)
+
+### Validation Annotations
+- **@NotNull**: Null validation
+- **@Size(min = x, max = y)**: String length validation
+- **@Email**: Email format validation
+- **@Valid**: Request body validation in controllers
+
+### Lombok Annotations
+- **@Data**: Generates getters, setters, toString, equals, hashCode
+- **@NoArgsConstructor**: Default constructor generation
+- **@AllArgsConstructor**: All-args constructor generation
+
+### Spring Annotations
+- **@SpringBootApplication**: Main application class
+- **@Configuration**: Configuration class marking
+- **@EnableWebSecurity**: Security configuration enablement
+- **@RestController**: REST endpoint controller
+- **@RequestMapping**: HTTP endpoint mapping
+- **@Autowired**: Dependency injection
+
+### Testing Annotations (Post-Migration Targets)
+- **@ExtendWith(MockitoExtension.class)**: JUnit 5 test runner (replaces @RunWith)
+- **@Mock**: Mock object creation
+- **@InjectMocks**: Mock injection into test subject
+- **@BeforeEach/@AfterEach**: Test setup and teardown (replaces @Before/@After)
+- **@Test**: Test method marking (from org.junit.jupiter.api)
+
+## Best Practices
 
 ### Dependency Injection
 - **Field Injection**: Currently using @Autowired field injection
