@@ -2,6 +2,8 @@
 inclusion: manual
 ---
 
+> **Single Source of Truth**: This file is the authoritative reference for MCP tool categories. It is read at runtime by the `mcp-smart-enable` and `mcp-tool-gatekeeper` hooks. Do not duplicate this information in hook prompts.
+
 # MCP_DOCKER Server - Complete Tool Reference
 
 This document lists all tools available under the MCP_DOCKER server. Use this to determine if a user's prompt requires MCP tools.
