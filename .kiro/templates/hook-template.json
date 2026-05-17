@@ -1,0 +1,38 @@
+{
+  "enabled": false,
+  "name": "Your Hook Name",
+  "description": "Describe what this hook does and when to use it. This template shows all available trigger types and configurations.",
+  "version": "1",
+  "when": {
+    "type": "fileSaved",
+    "pattern": "src/**/*.java"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Your agent instructions here. The agent will execute these instructions when the hook triggers."
+  },
+  "_template_notes": {
+    "available_trigger_types": [
+      "fileSaved - triggers when a file matching the pattern is saved",
+      "promptSubmit - triggers before a user prompt is processed",
+      "agentStop - triggers after the agent completes a task",
+      "preTaskExecution - triggers before a spec task starts executing",
+      "preToolUse - triggers before a tool is invoked (use toolTypes to filter)",
+      "userTriggered - triggers only when manually invoked by the user"
+    ],
+    "available_action_types": [
+      "askAgent - sends the prompt to the agent for execution"
+    ],
+    "pattern_examples": [
+      "src/**/*.java - all Java files under src/",
+      "**/*.md - all Markdown files",
+      "sample-app/src/main/**/*.java - specific directory"
+    ],
+    "tips": [
+      "Set enabled to false while testing",
+      "Keep prompts focused on a single concern",
+      "Reference steering files for large context instead of inlining",
+      "Use specific file patterns to avoid unnecessary triggers"
+    ]
+  }
+}
