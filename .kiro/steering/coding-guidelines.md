@@ -1,3 +1,7 @@
+---
+inclusion: auto
+---
+
 # Development Guidelines and Patterns
 
 > Kiro Steering File — Provides Kiro IDE with coding conventions and migration patterns to follow when assisting with code transformations.

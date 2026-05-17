@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Unified Task Router",
+  "description": "Routes spec tasks to the appropriate specialized sub-agent based on task number. Consolidates routing for all 16 workshop transformation tasks into a single hook.",
+  "version": "1",
+  "when": {
+    "type": "preTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Check the task number that is about to execute and route it to the correct specialized sub-agent using invokeSubAgent. Pass the full task description including all subtasks as the prompt.\n\nROUTING TABLE:\n\n| Task Numbers | Sub-Agent | Specialty |\n|---|---|---|\n| 1, 2, 3 | workshop-text-replacer | File renaming, ordered text replacements (Priority 1-6, longest-match-first), cross-reference updates, code block preservation, verification |\n| 4, 5, 6, 7, 8 | workshop-module-rewriter | Kiro feature introductions (Specs, Hooks, Skills, Custom Agents, Powers), feature summary table updates, structural content rewrites while preserving Java/Spring technical content |\n| 9, 14, 15, 16 | workshop-validator | READ-ONLY validation: checking terminology, verifying file renames, confirming steering files, validating sample-app preservation, cross-referencing features, producing structured pass/fail reports |\n| 10, 11, 12, 13 | workshop-reference-updater | Quick Reference Guide overhaul, supporting document updates (Agenda, Instructor, Training, Test docs), README branding, directory migration from .amazonq/rules/ to .kiro/steering/ |\n\nINSTRUCTIONS:\n1. Identify which task number is about to execute\n2. Find the matching row in the routing table\n3. Delegate to that sub-agent using invokeSubAgent with the full task description\n4. If the task number does not match any row, proceed normally without delegation"
+  }
+}
