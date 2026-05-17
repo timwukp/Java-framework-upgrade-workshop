@@ -1,0 +1,14 @@
+{
+  "enabled": false,
+  "name": "Your Hook Name",
+  "description": "Describe what this hook does and when to use it. See hook-template-README.md for trigger types, pattern examples, and tips.",
+  "version": "1",
+  "when": {
+    "type": "fileSaved",
+    "pattern": "src/**/*.java"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Your agent instructions here. The agent will execute these instructions when the hook triggers."
+  }
+}

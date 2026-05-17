@@ -1,3 +1,9 @@
+---
+inclusion: always
+version: "1.0"
+last_updated: "2025-05-17"
+---
+
 # Technology Stack and Dependencies
 
 > Kiro Steering File — Provides Kiro IDE with technology stack context for guiding migration decisions.

@@ -1,3 +1,9 @@
+---
+inclusion: auto
+version: "1.0"
+last_updated: "2025-05-17"
+---
+
 # Project Structure and Architecture
 
 > Kiro Steering File — Provides Kiro IDE with project structure and architecture context for navigating and understanding the codebase during migration.

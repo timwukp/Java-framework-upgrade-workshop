@@ -1,3 +1,9 @@
+---
+inclusion: always
+version: "1.0"
+last_updated: "2025-05-17"
+---
+
 # Project Context
 
 > Kiro Steering File — Provides Kiro IDE with project-level context for the Java Framework Migration Workshop.
