@@ -142,7 +142,7 @@ Steering files support different inclusion modes that control when they are load
 - **`auto`** with `name` and `description`: Auto-included when the user's request matches the description. Kiro determines relevance automatically.
 
 **Additional notes:**
-- Foundational steering files (`product.md`, `tech.md`, `structure.md`) can be generated via the **"Generate Steering Docs"** button in the Kiro panel.
+- Foundational steering files (`product.md`, `tech.md`, `structure.md`) can be generated via the **"Generate Steering Docs"** button in the Kiro pane.
 - File references in steering files use the syntax: `#[[file:relative/path/to/file]]`
 - **Scopes**: Workspace-level steering files live in `.kiro/steering/` for project-specific context. Global steering files live in `~/.kiro/steering/` for user-level preferences that apply across all projects.
 

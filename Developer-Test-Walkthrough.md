@@ -103,7 +103,7 @@ mvn validate
 3. **Dependencies to Update**:
    - Spring Framework: 5.2.3 → 6.2.x
    - Spring Boot: 2.2.4 → 3.4.x
-   - JUnit: 4.12 → 5.11.4
+   - JUnit: 4.12 → 5.11.x
    - javax dependencies → jakarta
    - SQL Server driver: 7.4.1.jre8 → 12.x.jre11
 

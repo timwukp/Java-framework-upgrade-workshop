@@ -256,7 +256,7 @@ Kiro pane → + button under Specs (or "Spec" from chat pane)
 
 **How to use:**
 ```
-Kiro panel → Agent Hooks → + button
+Kiro pane → Agent Hooks → + button
 - Choose trigger type (e.g., File Save for *.java files)
 - Choose action: "Ask Kiro" with review prompt or "Run Command"
 - Hooks run automatically on configured triggers
@@ -458,6 +458,8 @@ Solution:
 - [Kiro IDE User Guide](https://kiro.dev/docs/)
 - [Kiro Specs Guide](https://kiro.dev/docs/specs/)
 - [Kiro Skills Guide](https://kiro.dev/docs/skills/)
+- [Kiro Hooks Guide](https://kiro.dev/docs/hooks/)
+- [Kiro Steering Guide](https://kiro.dev/docs/steering/)
 
 ### Migration References
 - Java 21 Migration Guide

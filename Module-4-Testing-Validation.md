@@ -549,7 +549,7 @@ Kiro Hooks provide automated, continuous code review triggered on file save — 
 
 Kiro Hooks run automatically when you save files, providing continuous feedback on code quality and security. To set up security-focused hooks:
 
-1. Open the **Kiro panel**, navigate to **Agent Hooks**
+1. Open the **Kiro pane**, navigate to **Agent Hooks**
 2. Click the **+** button and choose **"Manually create"** or **"Ask Kiro to create"**
 3. Configure the trigger type to **File Save** for Java source files (`**/*.java`)
 4. Choose the action: **"Ask Kiro"** with a security review prompt, or **"Run Command"** to execute a static analysis tool
