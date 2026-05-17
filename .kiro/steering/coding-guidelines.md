@@ -1,5 +1,7 @@
 ---
 inclusion: auto
+version: "1.0"
+last_updated: "2025-05-17"
 ---
 
 # Development Guidelines and Patterns

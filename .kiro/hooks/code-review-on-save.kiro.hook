@@ -1,0 +1,14 @@
+{
+  "enabled": false,
+  "name": "Migration Code Review on Save",
+  "description": "Reviews saved Java files for migration issues: javax imports, deprecated APIs, Java 8 patterns. Enable this hook during the workshop migration exercises.",
+  "version": "1",
+  "when": {
+    "type": "fileSaved",
+    "pattern": "sample-app/src/**/*.java"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Review the saved Java file for migration issues. Check for:\n\n1. **javax.* imports** that should be jakarta.* (javax.persistence, javax.validation, javax.servlet, javax.annotation)\n2. **Deprecated Java 8 APIs** that have Java 21 replacements (java.util.Date, SimpleDateFormat, Thread.stop/suspend/resume)\n3. **java.util.Date usage** that should be java.time.LocalDateTime or java.time.Instant\n4. **Spring Security deprecated patterns** like extending WebSecurityConfigurerAdapter (should use SecurityFilterChain @Bean)\n5. **JUnit 4 annotations** that should be JUnit 5 (@Before -> @BeforeEach, @After -> @AfterEach, @RunWith -> @ExtendWith, Assert.* -> Assertions.*)\n\nReport findings as a concise list with:\n- Line number (if identifiable)\n- Current pattern found\n- Suggested replacement\n\nIf no migration issues are found, respond with: 'No migration issues detected in this file.'"
+  }
+}

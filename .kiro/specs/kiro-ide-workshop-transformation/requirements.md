@@ -1,3 +1,8 @@
+---
+status: completed
+note: "This spec documents the workshop creation process (transforming from Amazon Q Developer to Kiro IDE). All 16 tasks have been completed successfully."
+---
+
 # Requirements Document
 
 ## Introduction

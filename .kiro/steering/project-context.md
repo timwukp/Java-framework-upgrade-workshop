@@ -1,5 +1,7 @@
 ---
 inclusion: always
+version: "1.0"
+last_updated: "2025-05-17"
 ---
 
 # Project Context
