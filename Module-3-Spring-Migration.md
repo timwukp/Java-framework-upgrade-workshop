@@ -283,9 +283,11 @@ The "Jakarta Namespace Migration" Skill automates:
 
 **(b) How to Create the Skill**
 
-1. Open the Kiro Skills panel in the sidebar
-2. Click "Create Skill" and name it `jakarta-namespace-migration`
-3. Define the skill's SKILL.md with the transformation patterns:
+1. Create a skill file at `.kiro/skills/jakarta-namespace-migration/` directory
+2. Add a markdown file (e.g., `SKILL.md`) describing the transformation patterns
+3. The skill will be available as the `/jakarta-namespace-migration` slash command in Kiro Chat
+
+Define the skill's SKILL.md with the transformation patterns:
 
 ```markdown
 # Jakarta Namespace Migration Skill
@@ -323,18 +325,16 @@ Automate the javax.* to jakarta.* namespace migration required for Spring 6 / Ja
 
 **(c) When and How to Invoke the Skill**
 
-Invoke the skill through Kiro Chat to process individual files or entire packages:
+Invoke the skill in Kiro Chat using the slash command to process individual files or entire packages:
 
 ```
-Ask Kiro:
-"Run the jakarta-namespace-migration skill on
-#File:sample-app/src/main/java/com/enterprise/user/entity/User.java"
+Use /jakarta-namespace-migration on
+#File:sample-app/src/main/java/com/enterprise/user/entity/User.java
 ```
 
 ```
-Ask Kiro:
-"Run the jakarta-namespace-migration skill across all files in
-#Folder:sample-app/src/main/java/com/enterprise/user/"
+Use /jakarta-namespace-migration across all files in
+#Folder:sample-app/src/main/java/com/enterprise/user/
 ```
 
 The skill applies all namespace replacements consistently, handling edge cases like fully-qualified references and skipping packages that should remain as javax. After the skill runs, review the changes in the diff view.
@@ -390,9 +390,11 @@ The "Spring Security Upgrade" Skill automates:
 
 **(b) How to Create the Skill**
 
-1. Open the Kiro Skills panel in the sidebar
-2. Click "Create Skill" and name it `spring-security-upgrade`
-3. Define the skill's SKILL.md:
+1. Create a skill file at `.kiro/skills/spring-security-upgrade/` directory
+2. Add a markdown file (e.g., `SKILL.md`) describing the transformation patterns
+3. The skill will be available as the `/spring-security-upgrade` slash command in Kiro Chat
+
+Define the skill's SKILL.md:
 
 ```markdown
 # Spring Security Upgrade Skill
@@ -433,20 +435,18 @@ to component-based SecurityFilterChain (Spring Security 6.x).
 
 **(c) When and How to Invoke the Skill**
 
-Invoke the skill on security configuration files:
+Invoke the skill in Kiro Chat using the slash command on security configuration files:
 
 ```
-Ask Kiro:
-"Run the spring-security-upgrade skill on
-#File:sample-app/src/main/java/com/enterprise/user/config/SecurityConfig.java"
+Use /spring-security-upgrade on
+#File:sample-app/src/main/java/com/enterprise/user/config/SecurityConfig.java
 ```
 
 For projects with multiple security configuration classes:
 
 ```
-Ask Kiro:
-"Run the spring-security-upgrade skill on all security configuration files in
-#Folder:sample-app/src/main/java/com/enterprise/user/config/"
+Use /spring-security-upgrade on all security configuration files in
+#Folder:sample-app/src/main/java/com/enterprise/user/config/
 ```
 
 The skill transforms the entire security configuration pattern in one pass. Review the diff carefully — security configurations can have subtle behavioral differences between Spring Security 5.x and 6.x.
@@ -837,8 +837,8 @@ Apply and run generated test
 Solution:
 Ask Kiro: "Getting NoClassDefFoundError for javax.servlet after Spring 6 upgrade. What's missing?"
 
-Or run the Jakarta Namespace Migration Skill to catch any missed files:
-"Run the jakarta-namespace-migration skill on #Folder:sample-app/src/main/java/"
+Or use /jakarta-namespace-migration to catch any missed files:
+"Use /jakarta-namespace-migration on #Folder:sample-app/src/main/java/"
 
 Kiro will suggest:
 - Add jakarta.servlet dependency
@@ -849,8 +849,8 @@ Kiro will suggest:
 **Issue: Security configuration not working**
 ```
 Solution:
-Run the Spring Security Upgrade Skill on the affected file:
-"Run the spring-security-upgrade skill on
+Run /spring-security-upgrade on the affected file:
+"Use /spring-security-upgrade on
 #File:sample-app/src/main/java/com/enterprise/user/config/SecurityConfig.java"
 
 Or ask the Spring Migration Agent directly:

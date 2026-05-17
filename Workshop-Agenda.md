@@ -12,7 +12,7 @@
 ## Pre-Workshop Requirements (Complete Before Day 1)
 
 **Participants must have:**
-- [ ] Kiro IDE installed (download from [Kiro IDE Download URL])
+- [ ] Kiro IDE installed (download from [kiro.dev/downloads](https://kiro.dev/downloads/))
 - [ ] Signed in with Kiro account
 - [ ] Java 21 JDK installed
 - [ ] Maven 3.8+ or Gradle 7+ installed
@@ -133,8 +133,8 @@ git tag pre-migration-baseline
 
 **Activity:**
 ```
-1. Command Palette → "Kiro Specs workflow"
-2. Select: Java 8 → Java 21
+1. Kiro pane → + button under Specs
+2. Select "Feature Spec" and describe: Java 8 → Java 21 migration
 3. Review changes in git diff
 4. Ask Kiro to explain key changes
 ```

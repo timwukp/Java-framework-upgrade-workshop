@@ -333,10 +333,10 @@ Solution: Add @ExtendWith(MockitoExtension.class). The JUnit 4→5 Migration Ski
 Kiro Skills are reusable, domain-specific capabilities that automate repetitive migration patterns. You create a Skill by defining what it does, test it on sample files, optimize its behavior, and then trigger it across your codebase.
 
 ### How to Work with Skills
-1. **Create**: Define a new Skill in Kiro IDE specifying the automation pattern (e.g., "convert Date API to LocalDateTime across Java files")
-2. **Test**: Run the Skill on a single file to verify correct behavior before applying broadly
+1. **Create**: Define a new Skill as a file in `.kiro/skills/<skill-name>/` directory with a markdown file describing the automation pattern (e.g., "convert Date API to LocalDateTime across Java files")
+2. **Test**: Invoke the Skill via its `/skill-name` slash command in Kiro Chat on a single file to verify correct behavior before applying broadly
 3. **Optimize**: Refine the Skill's instructions based on test results to handle edge cases
-4. **Trigger**: Invoke the Skill on target files or folders to apply the pattern at scale
+4. **Trigger**: Invoke the Skill with `/skill-name` on target files or folders to apply the pattern at scale
 
 ### Workshop Skills
 
@@ -510,7 +510,7 @@ git reset --hard pre-migration-baseline
 ## Post-Workshop Resources
 
 ### Documentation
-- [Kiro IDE User Guide]([Kiro IDE Documentation URL])
+- [Kiro IDE User Guide](https://kiro.dev/docs/)
 - [Java 21 Migration Guide](https://docs.oracle.com/en/java/javase/21/migrate/)
 - [Spring Framework 6 Documentation](https://docs.spring.io/spring-framework/reference/)
 - [Jakarta EE Migration Guide](https://jakarta.ee/resources/)

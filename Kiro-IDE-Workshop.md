@@ -52,15 +52,13 @@ Prerequisites:
 
 #### Step 1: Run Kiro Code Transformation
 
-**Using Kiro Specs command:**
+**Using Kiro Specs:**
 ```
-1. Open Command Palette (Ctrl+Shift+P / Cmd+Shift+P)
-2. Select "Kiro Specs workflow"
-3. Choose transformation type: "Upgrade Java version"
-4. Select source: Java 8
-5. Select target: Java 21
-6. Review transformation plan
-7. Execute transformation
+1. From the Kiro pane, click the + button under Specs (or choose "Spec" from the chat pane)
+2. Select "Feature Spec" for the migration
+3. Describe: "Migrate application from Java 8 to Java 21"
+4. Review the generated requirements, design, and tasks
+5. Execute tasks - use "Run all Tasks" for parallel execution
 ```
 
 #### Step 2: Review Transformation Results
@@ -214,9 +212,11 @@ Kiro Chat queries:
 
 **How to use:**
 ```
-Command Palette → Kiro Specs workflow
-- Select transformation type
-- Review changes before applying
+Kiro pane → + button under Specs (or "Spec" from chat pane)
+- Select "Feature Spec" or "Bugfix Spec"
+- Describe the transformation goal
+- Review generated requirements, design, and tasks
+- Execute tasks with "Run all Tasks" for parallel execution
 - Validate results with Kiro Chat
 ```
 
@@ -256,10 +256,11 @@ Command Palette → Kiro Specs workflow
 
 **How to use:**
 ```
-Command Palette → Kiro Hooks
-- Review findings in Code Issues Panel
-- Apply suggested fixes
-- Re-review after changes
+Kiro panel → Agent Hooks → + button
+- Choose trigger type (e.g., File Save for *.java files)
+- Choose action: "Ask Kiro" with review prompt or "Run Command"
+- Hooks run automatically on configured triggers
+- Review findings and apply fixes
 ```
 
 ---
@@ -454,9 +455,9 @@ Solution:
 ## Resources
 
 ### Kiro IDE Documentation
-- [Kiro IDE User Guide]([Kiro IDE Documentation URL])
-- [Code Transformation Guide]([Kiro IDE Documentation URL])
-- [Best Practices]([Kiro IDE Documentation URL])
+- [Kiro IDE User Guide](https://kiro.dev/docs/)
+- [Kiro Specs Guide](https://kiro.dev/docs/specs/)
+- [Kiro Skills Guide](https://kiro.dev/docs/skills/)
 
 ### Migration References
 - Java 21 Migration Guide

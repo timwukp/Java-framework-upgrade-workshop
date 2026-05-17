@@ -141,7 +141,7 @@ The "JUnit 4→5 Migration" Skill handles three categories of repetitive test mo
 
 **(b) How to Create the Skill**
 
-**Step 1:** Open the Kiro Skills panel and select "Create Skill"
+**Step 1:** Create a skill file at `.kiro/skills/junit4-to-junit5-migration/` directory. Add a markdown file describing the transformation patterns.
 
 **Step 2:** Name the skill `junit4-to-junit5-migration` and provide the following description:
 
@@ -175,11 +175,11 @@ Constraints:
 **(c) When and How to Invoke the Skill**
 
 - **When to use**: Before manually migrating any JUnit 4 test file. Run the skill first to handle the mechanical conversions, then review and handle any edge cases manually.
-- **How to invoke**: Open a JUnit 4 test file in the editor, then trigger the skill from the Kiro Skills panel or via Kiro Chat:
+- **How to invoke**: Open a JUnit 4 test file in the editor, then trigger the skill via the `/junit4-to-junit5-migration` slash command in Kiro Chat:
 
 ```
 Ask Kiro:
-"Use the junit4-to-junit5-migration skill to migrate this test file
+"Use /junit4-to-junit5-migration to migrate this test file
 #File UserServiceTest.java"
 ```
 
@@ -187,7 +187,7 @@ Ask Kiro:
 
 ```
 Ask Kiro:
-"Use the junit4-to-junit5-migration skill to migrate all test files in
+"Use /junit4-to-junit5-migration to migrate all test files in
 #Folder src/test/java/com/enterprise/user"
 ```
 
@@ -547,10 +547,14 @@ Kiro Hooks provide automated, continuous code review triggered on file save — 
 
 Kiro Hooks run automatically when you save files, providing continuous feedback on code quality and security. To set up security-focused hooks:
 
-1. Open the Kiro Hooks panel from the sidebar
-2. Create a new hook or verify that the default security review hook is active
-3. Configure the hook to trigger on file save for Java source files (`**/*.java`)
-4. The hook will automatically scan for common security issues including:
+1. Open the **Kiro panel**, navigate to **Agent Hooks**
+2. Click the **+** button and choose **"Manually create"** or **"Ask Kiro to create"**
+3. Configure the trigger type to **File Save** for Java source files (`**/*.java`)
+4. Choose the action: **"Ask Kiro"** with a security review prompt, or **"Run Command"** to execute a static analysis tool
+
+Available trigger types: File Save, File Create, File Delete, User prompt submission, Agent turn completion, Pre/Post Tool Use, Pre Task Execution, or Manual triggers.
+
+The hook will automatically scan for common security issues including:
    - SQL injection vulnerabilities
    - Cross-site scripting (XSS) risks
    - Insecure authentication patterns

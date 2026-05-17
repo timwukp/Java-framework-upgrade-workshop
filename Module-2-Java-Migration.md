@@ -9,6 +9,12 @@
 
 Instead of running a single transformation command, you will use Kiro Specs to plan and execute the Java 8 → Java 21 migration as a structured workflow. Kiro Specs breaks the migration into three phases: a requirements document defining scope, a design document with migration strategy, and a set of executable tasks you track to completion.
 
+> **Tip:** You can create a Spec from the Kiro pane by clicking the **+** button under **Specs**, or by choosing **Spec** from the chat pane. Choose **Feature Spec** or **Bugfix Spec**, then describe your migration goal.
+>
+> - **Quick Plan mode**: For well-understood migrations, use Quick Plan mode which generates requirements, design, and tasks in one pass without approval gates.
+> - **Parallel Task Execution**: Use "Run all Tasks" to execute independent tasks concurrently in parallel waves for faster completion.
+> - **Analyze Requirements**: Use "Analyze Requirements" to catch inconsistencies and gaps before proceeding to the design phase.
+
 **Step 1: Create the requirements document**
 
 Open Kiro Chat and request a new Spec:
@@ -178,9 +184,11 @@ The "Java 8→21 Migration" Skill automates these repetitive modernization patte
 
 **(b) How to Create the Skill**
 
-1. Open the Kiro Skills panel in the sidebar
-2. Click "Create Skill" and name it `java-8-to-21-migration`
-3. Define the skill's SKILL.md with the transformation patterns:
+1. Create a skill file at `.kiro/skills/java-8-to-21-migration/` directory
+2. Add a markdown file (e.g., `SKILL.md`) describing the transformation patterns
+3. The skill will be available as the `/java-8-to-21-migration` slash command in Kiro Chat
+
+Define the skill's SKILL.md with the transformation patterns:
 
 ```markdown
 # Java 8→21 Migration Skill
@@ -213,18 +221,17 @@ Automate repetitive Java 8 to Java 21 code modernization patterns.
 
 **(c) When and How to Invoke the Skill**
 
-Invoke the skill through Kiro Chat:
+Invoke the skill in Kiro Chat using the slash command:
 
 ```
-Ask Kiro:
-"Run the java-8-to-21-migration skill on
-#File:sample-app/src/main/java/com/enterprise/user/service/UserService.java"
+/java-8-to-21-migration
+Then provide the target file context:
+#File:sample-app/src/main/java/com/enterprise/user/service/UserService.java
 ```
 
 ```
-Ask Kiro:
-"Run the java-8-to-21-migration skill across all files in
-#Folder:sample-app/src/main/java/com/enterprise/user/"
+Use /java-8-to-21-migration on all files in
+#Folder:sample-app/src/main/java/com/enterprise/user/
 ```
 
 The skill applies all defined patterns consistently, saving you from repeating the same prompts for each file. After the skill runs, review the changes in the diff view and commit when satisfied.

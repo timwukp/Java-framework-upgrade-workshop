@@ -11,7 +11,7 @@ Kiro IDE is a standalone AI-powered IDE — there is no extension to install in 
 
 **Installation Steps:**
 ```
-1. Download Kiro IDE from [Kiro IDE Download URL]
+1. Download Kiro IDE from [kiro.dev/downloads](https://kiro.dev/downloads/)
 2. Run the installer for your operating system (macOS, Windows, or Linux)
 3. Launch Kiro IDE
 4. Click "Sign in" on the welcome screen
@@ -131,6 +131,29 @@ Create `.kiro/steering/project-structure.md` with:
 **Verification:**
 - Open Kiro Chat and ask: "What do you know about this project's migration goals?"
 - Kiro should reference the steering file content in its response, confirming the files are being picked up.
+
+#### Steering File Inclusion Modes
+
+Steering files support different inclusion modes that control when they are loaded:
+
+- **`always`** (default): Loaded in every interaction automatically. Use for project context that is always relevant.
+- **`fileMatch`** with `fileMatchPattern`: Conditional inclusion based on file type being worked on, e.g., `fileMatchPattern: "**/*.java"` only loads when working with Java files.
+- **`manual`**: On-demand inclusion via `#steering-file-name` in chat or `/` slash commands. Use for specialized context needed only occasionally.
+- **`auto`** with `name` and `description`: Auto-included when the user's request matches the description. Kiro determines relevance automatically.
+
+**Additional notes:**
+- Foundational steering files (`product.md`, `tech.md`, `structure.md`) can be generated via the **"Generate Steering Docs"** button in the Kiro panel.
+- File references in steering files use the syntax: `#[[file:relative/path/to/file]]`
+- **Scopes**: Workspace-level steering files live in `.kiro/steering/` for project-specific context. Global steering files live in `~/.kiro/steering/` for user-level preferences that apply across all projects.
+
+#### Understanding Kiro Development Modes
+
+Kiro IDE offers two development approaches:
+
+- **Vibe mode**: Quick exploratory coding and prototyping. Just chat with Kiro and code iteratively. Best for small fixes, experiments, and rapid prototyping.
+- **Spec mode**: Structured planning for complex features. Creates requirements, design, and task documents. Best for large migrations, multi-file changes, and work requiring documentation.
+
+**For this workshop**, we use Spec mode for the major migration work (Modules 2-3) because it provides trackable requirements, design decisions, and task lists. For quick fixes during debugging (Module 4), Vibe mode works well.
 
 #### Exercise 1.3: Browse and Install Powers from the Catalog
 **Tool: Kiro Powers**

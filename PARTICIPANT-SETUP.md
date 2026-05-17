@@ -50,7 +50,7 @@ git --version
 
 Kiro IDE is a standalone AI-powered IDE — no extensions or plugins required.
 
-1. Download Kiro IDE from [Kiro IDE Download URL]
+1. Download Kiro IDE from [kiro.dev/downloads](https://kiro.dev/downloads/)
 2. Run the installer for your operating system (macOS, Windows, or Linux)
 3. Launch Kiro IDE
 4. Click "Sign in" on the welcome screen
