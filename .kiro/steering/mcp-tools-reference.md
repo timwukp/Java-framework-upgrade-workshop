@@ -4,7 +4,7 @@ version: "1.0"
 last_updated: "2025-05-17"
 ---
 
-> **Single Source of Truth**: This file is the authoritative reference for MCP tool categories. It is read at runtime by the `mcp-smart-enable` and `mcp-tool-gatekeeper` hooks. Do not duplicate this information in hook prompts.
+> **Single Source of Truth**: This file is the authoritative reference for MCP tool categories. It is read at runtime by the `mcp-smart-enable` and `mcp-tool-gatekeeper` hooks. Do not duplicate this information in hook prompts. Note: the gatekeeper hook defaults to ACCESS GRANTED if this file cannot be read (fail-open design for workshop convenience).
 
 # MCP_DOCKER Server - Complete Tool Reference
 
