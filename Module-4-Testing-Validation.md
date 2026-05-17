@@ -209,41 +209,41 @@ Update my pom.xml mockito dependency."
 ```java
 // BEFORE (Old Mockito)
 @RunWith(MockitoJUnitRunner.class)
-public class UserControllerTest {
+public class UserServiceTest {
     
     @Mock
-    private UserService userService;
+    private UserRepository userRepository;
     
     @InjectMocks
-    private UserController userController;
+    private UserService userService;
     
     @Test
-    public void testGetUser() {
-        when(userService.findById(1L)).thenReturn(new User("John"));
-        User result = userController.getUser(1L);
-        verify(userService, times(1)).findById(1L);
+    public void testFindUser() {
+        when(userRepository.findById(1L)).thenReturn(Optional.of(new User("John")));
+        User result = userService.findById(1L);
+        verify(userRepository, times(1)).findById(1L);
     }
 }
 
 // Ask Kiro:
 "Update this Mockito test for JUnit 5 and Spring 6:
-[paste test class]"
+#File UserServiceTest.java"
 
 // AFTER (Modern Mockito) - Kiro suggestion
 @ExtendWith(MockitoExtension.class)
-class UserControllerTest {
+class UserServiceTest {
     
     @Mock
-    private UserService userService;
+    private UserRepository userRepository;
     
     @InjectMocks
-    private UserController userController;
+    private UserService userService;
     
     @Test
-    void testGetUser() {
-        when(userService.findById(1L)).thenReturn(new User("John"));
-        User result = userController.getUser(1L);
-        verify(userService, times(1)).findById(1L);
+    void testFindUser() {
+        when(userRepository.findById(1L)).thenReturn(Optional.of(new User("John")));
+        User result = userService.findById(1L);
+        verify(userRepository, times(1)).findById(1L);
     }
 }
 ```
@@ -333,7 +333,7 @@ Error: NullPointerException in test
 
 Ask Kiro:
 "Mocks are null in JUnit 5 test:
-#File UserControllerTest.java
+#File UserServiceTest.java
 #Problems
 What's wrong with my mock setup?"
 
@@ -542,6 +542,8 @@ Generate tests for low-coverage classes."
 **Tool: Kiro Hooks + Kiro Chat**
 
 Kiro Hooks provide automated, continuous code review triggered on file save — replacing the need for manual review commands. In this exercise, you'll configure Hooks for security validation and learn to use on-demand review via Kiro Chat.
+
+> **Workshop Note**: The `SecurityConfig.java` in the sample-app intentionally contains hardcoded passwords (e.g., `{noop}password` patterns). This is a deliberate teaching exercise - participants should identify these credentials during the security review and practice replacing them with externalized configuration (environment variables or Spring's `@Value` with encrypted property sources). Kiro Hooks should flag these as security findings.
 
 **Step 1: Configure Kiro Hooks for automated security review**
 

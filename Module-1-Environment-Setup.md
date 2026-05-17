@@ -383,8 +383,8 @@ Phase 3: Testing
 Component | Business Impact | Migration Risk | Testing Priority
 ----------|----------------|----------------|------------------
 UserService | High | Medium | P0
-PaymentService | Critical | High | P0
-ReportService | Medium | Low | P1
+SecurityConfig | High | High | P0
+UserController | Medium | Low | P1
 ```
 
 ---
