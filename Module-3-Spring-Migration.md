@@ -203,7 +203,7 @@ Include:
 
 <!-- AFTER (Spring 6) - Kiro suggestion -->
 <properties>
-    <spring.version>6.1.0</spring.version>
+    <spring.version>6.2.1</spring.version>
 </properties>
 
 <dependencies>

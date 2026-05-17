@@ -101,9 +101,9 @@ mvn validate
    - Old Spring Security patterns
 
 3. **Dependencies to Update**:
-   - Spring Framework: 5.2.3 → 6.1.x
-   - Spring Boot: 2.2.4 → 3.2.x
-   - JUnit: 4.12 → 5.10.x
+   - Spring Framework: 5.2.3 → 6.2.x
+   - Spring Boot: 2.2.4 → 3.4.x
+   - JUnit: 4.12 → 5.11.4
    - javax dependencies → jakarta
    - SQL Server driver: 7.4.1.jre8 → 12.x.jre11
 
@@ -253,8 +253,8 @@ protected void onCreate() {
 <spring.boot.version>2.2.4.RELEASE</spring.boot.version>
 
 <!-- AFTER -->
-<spring.version>6.1.0</spring.version>
-<spring.boot.version>3.2.0</spring.boot.version>
+<spring.version>6.2.1</spring.version>
+<spring.boot.version>3.4.1</spring.boot.version>
 ```
 
 **Training Material Quality**: ✅ GOOD

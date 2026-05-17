@@ -3,7 +3,7 @@
 > **Comprehensive hands-on workshop for migrating Java 8 + Spring 5.2.3 applications to Java 21 + Spring 6 using AWS Kiro IDE**
 
 [![Java](https://img.shields.io/badge/Java-8%20→%2021-orange)](https://openjdk.org/projects/jdk/21/)
-[![Spring](https://img.shields.io/badge/Spring-5.2.3%20→%206.1.0-green)](https://spring.io/projects/spring-framework)
+[![Spring](https://img.shields.io/badge/Spring-5.2.3%20→%206.2.1-green)](https://spring.io/projects/spring-framework)
 [![Workshop](https://img.shields.io/badge/Duration-8%20hours-blue)](./Workshop-Agenda.md)
 [![Kiro IDE](https://img.shields.io/badge/Kiro-IDE-purple)](https://kiro.dev/)
 
@@ -139,8 +139,8 @@ The workshop includes a **complete user management service** that demonstrates r
 
 ### Migration Targets
 - ✅ **Java 21**: Modern language features and performance
-- ✅ **Spring 6.1.0**: Latest framework with Jakarta EE support
-- ✅ **Spring Boot 3.2.0**: Modern auto-configuration
+- ✅ **Spring 6.2.1**: Latest framework with Jakarta EE support
+- ✅ **Spring Boot 3.4.1**: Modern auto-configuration
 - ✅ **JUnit 5**: Modern testing framework
 - ✅ **Jakarta Namespace**: EE 9+ compliance
 - ✅ **Modern APIs**: LocalDateTime, SecurityFilterChain, etc.
@@ -152,9 +152,9 @@ The workshop includes a **complete user management service** that demonstrates r
 | Component | Before (Current) | After (Target) | Migration Type |
 |-----------|------------------|----------------|----------------|
 | **Java** | 1.8 | 21 (LTS) | Major version upgrade |
-| **Spring Framework** | 5.2.3.RELEASE | 6.1.0 | Major version upgrade |
-| **Spring Boot** | 2.2.4.RELEASE | 3.2.0 | Major version upgrade |
-| **JUnit** | 4.12 | 5.10.x | Framework migration |
+| **Spring Framework** | 5.2.3.RELEASE | 6.2.1 | Major version upgrade |
+| **Spring Boot** | 2.2.4.RELEASE | 3.4.1 | Major version upgrade |
+| **JUnit** | 4.12 | 5.11.4 | Framework migration |
 | **Namespace** | javax.* | jakarta.* | Package migration |
 | **Date API** | java.util.Date | java.time.LocalDateTime | API modernization |
 | **Security** | WebSecurityConfigurerAdapter | SecurityFilterChain | Pattern migration |

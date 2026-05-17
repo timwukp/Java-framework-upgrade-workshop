@@ -211,8 +211,8 @@ mvn clean compile
 
 By end of day, their sample-app will have:
 - ✅ Java 21
-- ✅ Spring 6.1.0
-- ✅ Spring Boot 3.2.0
+- ✅ Spring 6.2.1
+- ✅ Spring Boot 3.4.1
 - ✅ All javax → jakarta
 - ✅ Modern SecurityConfig
 - ✅ Modern Controllers

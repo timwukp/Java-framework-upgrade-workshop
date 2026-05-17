@@ -49,13 +49,13 @@ Which should I migrate first and why?"
 <dependency>
     <groupId>org.junit.jupiter</groupId>
     <artifactId>junit-jupiter</artifactId>
-    <version>5.10.0</version>
+    <version>5.11.4</version>
     <scope>test</scope>
 </dependency>
 <dependency>
     <groupId>org.junit.vintage</groupId>
     <artifactId>junit-vintage-engine</artifactId>
-    <version>5.10.0</version>
+    <version>5.11.4</version>
     <scope>test</scope>
 </dependency>
 ```

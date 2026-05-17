@@ -61,8 +61,8 @@
 
 **Actions Performed**:
 ```bash
-✅ Updated Spring Framework: 5.2.3.RELEASE → 6.1.0
-✅ Updated Spring Boot: 2.2.4.RELEASE → 3.2.0
+✅ Updated Spring Framework: 5.2.3.RELEASE → 6.2.1
+✅ Updated Spring Boot: 2.2.4.RELEASE → 3.4.1
 ✅ Migrated javax → jakarta in User.java (3 imports)
 ✅ Migrated javax → jakarta in UserController.java (1 import)
 ✅ Modernized UserController: @RequestMapping → @GetMapping/@PostMapping/etc
@@ -150,8 +150,8 @@
 
 ### Migration Statistics
 - **Java Version**: 1.8 → 21 ✅
-- **Spring Framework**: 5.2.3 → 6.1.0 ✅
-- **Spring Boot**: 2.2.4 → 3.2.0 ✅
+- **Spring Framework**: 5.2.3 → 6.2.1 ✅
+- **Spring Boot**: 2.2.4 → 3.4.1 ✅
 - **javax → jakarta**: 5 imports migrated ✅
 - **JUnit**: 4 → 5 ✅
 - **Date API**: java.util.Date → java.time.LocalDateTime ✅
